@@ -1,0 +1,3029 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+
+<head>
+  
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Saadman Alvi — Portfolio</title>
+  <meta
+    content="Portfolio of Md. Saadman Sakib Alvi — projects, publications, skills, education, honors, volunteering, and contact."
+    name="description" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Borel&amp;family=Exo+2:wght@400;600;800&amp;display=swap"
+    rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <style>
+    /* --- Creative & Working Projects (minimal styles) --- */
+    .section .tabs {
+      display: flex;
+      gap: .5rem;
+      margin: .75rem 0 1rem;
+      flex-wrap: wrap;
+    }
+
+    .section .tab {
+      padding: .5rem .9rem;
+      border: 1px solid rgba(0, 0, 0, .1);
+      border-radius: .75rem;
+      cursor: pointer;
+    }
+
+    .section .tab.active {
+      font-weight: 600;
+    }
+
+    .tab-panels .tab-panel {
+      display: none;
+    }
+
+    .tab-panels .tab-panel.active {
+      display: block;
+    }
+
+    .grid.image-grid,
+    .grid.video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .image-card {
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
+      background: #fff;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .video-card {
+      display: block;
+      text-decoration: none;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
+      background: #fff;
+    }
+
+    .video-card .thumb {
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-card .play {
+      font-size: 2rem;
+    }
+
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+    }
+
+    .video-modal.active {
+      display: block;
+    }
+
+    .video-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(6px);
+      background: rgba(0, 0, 0, .35);
+    }
+
+    .video-modal-dialog {
+      position: relative;
+      margin: 4vh auto;
+      max-width: min(1000px, 92vw);
+      background: #000;
+      border-radius: 1rem;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .video-close {
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      font-size: 1.5rem;
+      line-height: 1;
+      background: #fff;
+      border: none;
+      border-radius: .5rem;
+      padding: .25rem .5rem;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .video-frame-wrap {
+      width: min(1000px, 92vw);
+    }
+
+    .video-frame-wrap iframe {
+      width: 100%;
+      height: min(70vh, 65vw);
+      border: 0;
+      display: block;
+      background: #000;
+    }
+
+    /* Thumbnails & Captions for Design Works */
+    .card-caption {
+      font-size: .9rem;
+      line-height: 1.35;
+      padding: .5rem .25rem .25rem .25rem;
+      opacity: .9
+    }
+
+    .projects-grid img {
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+      display: block
+    }
+
+    /* Ensure Design Works matches Academic Projects */
+    .ap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px
+    }
+
+    .ap-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .06)
+    }
+
+    .ap-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover
+    }
+
+    .card-caption {
+      padding: .6rem .75rem .8rem;
+      font-size: .95rem;
+      opacity: .9
+    }
+
+    @media (min-width:1200px) {
+      .ap-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    /* Vertical card layout 2.3:1 */
+    .ap-card img {
+      aspect-ratio: 0.435/1 !important;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .ap-grid {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    /* --- Design Works sub-tabs --- */
+    .subtabs {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem
+    }
+
+    .subtab {
+      padding: .45rem .9rem;
+      border: 1px solid rgba(0, 0, 0, .12);
+      border-radius: .75rem;
+      cursor: pointer;
+      background: transparent
+    }
+
+    .subtab.active {
+      font-weight: 600
+    }
+
+    .subtab-panels .subtab-panel {
+      display: none
+    }
+
+    .subtab-panels .subtab-panel.active {
+      display: block
+    }
+
+    /* --- Wider 3-column grid on desktop --- */
+    .ap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px
+    }
+
+    @media (min-width: 1024px) {
+      .ap-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    /* Keep vertical portrait ratio (2.3 height : 1 width) */
+    .ap-card img {
+      aspect-ratio: 0.435/1 !important;
+      object-fit: cover;
+      width: 100%;
+      display: block
+    }
+
+    .card-caption {
+      padding: .6rem .75rem .8rem;
+      font-size: .95rem;
+      opacity: .9
+    }
+
+    /* Show sub-tabs only when Design Works tab is visible */
+    .tab-panel:not(.active) .subtabs,
+    .tab-panel:not(.active) .subtab-panels {
+      display: none !important;
+    }
+
+    /* Keep 3-column layout and vertical aspect */
+    .ap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px
+    }
+
+    @media (min-width:1024px) {
+      .ap-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    .ap-card img {
+      aspect-ratio: 0.435/1 !important;
+      object-fit: cover;
+      width: 100%;
+      display: block
+    }
+
+    .card-caption {
+      padding: .6rem .75rem .8rem;
+      font-size: .95rem;
+      opacity: .9
+    }
+
+    .subtabs {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin: 0 0 1rem
+    }
+
+    .subtab {
+      padding: .45rem .9rem;
+      border: 1px solid rgba(0, 0, 0, .12);
+      border-radius: .75rem;
+      cursor: pointer;
+      background: transparent
+    }
+
+    .subtab.active {
+      font-weight: 600
+    }
+
+    .subtab-panels .subtab-panel {
+      display: none
+    }
+
+    .subtab-panels .subtab-panel.active {
+      display: block
+    }
+
+    /* --- Creative & Working Projects: switch to 3:2 and reduce height --- */
+    #creative-working-projects h2 {
+      container;font-size: 2.5rem;
+      margin: 0 0 18px
+    }
+
+    #creative-working-projects .ap-card img {
+      aspect-ratio: 3/2 !important;
+      object-fit: cover;
+      width: 100%;
+      display: block
+    }
+
+    #creative-working-projects .card-caption {
+      padding: .5rem .65rem .65rem;
+      font-size: .93rem
+    }
+
+    /* Video cards to 3:2 as well */
+    #creative-working-projects .video-card .thumb {
+      aspect-ratio: 3/2 !important;
+    }
+
+    /* Card actions */
+    #creative-working-projects .card-actions {
+      display: flex;
+      gap: .5rem;
+      padding: .5rem .65rem .75rem;
+      border-top: 1px solid rgba(0, 0, 0, .06)
+    }
+
+    #creative-working-projects .view-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: .4rem .75rem;
+      border: 1px solid rgba(0, 0, 0, .12);
+      border-radius: .5rem;
+      text-decoration: none;
+      background: #fff;
+      font-size: .9rem
+    }
+
+    #creative-working-projects .view-btn:hover {
+      box-shadow: 0 3px 10px rgba(0, 0, 0, .08)
+    }
+
+    /* Image viewer inside modal (no zoom; fit to viewport) */
+    #video-modal .video-frame-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000
+    }
+
+    #video-modal #image-view {
+      max-width: 96vw;
+      max-height: 80vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: none;
+      background: #000
+    }
+
+    #video-modal iframe#video-frame {
+      display: none
+    }
+
+    /* Modal header (title + close) for both images & videos */
+    .video-modal-dialog {
+      background: #000;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .45)
+    }
+
+    .video-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .5rem;
+      padding: .5rem .75rem;
+      background: rgba(0, 0, 0, .65);
+      color: #fff
+    }
+
+    .video-modal-title {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 80vw
+    }
+
+    .video-modal .video-close {
+      background: #fff;
+      border: none;
+      border-radius: .5rem;
+      padding: .25rem .5rem;
+      font-size: 1.25rem;
+      cursor: pointer
+    }
+
+    .video-modal-backdrop {
+      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, .40)
+    }
+
+    .video-frame-wrap {
+      width: min(1100px, 92vw)
+    }
+
+    .video-frame-wrap iframe {
+      width: 100%;
+      height: min(76vh, 70vw);
+      border: 0;
+      display: block;
+      background: #000
+    }
+
+    /* Adjust modal layout to prevent image cropping */
+    .video-modal-dialog {
+      display: flex;
+      flex-direction: column;
+      max-height: 92vh;
+      overflow: hidden;
+      border-radius: 1rem;
+      background: #000
+    }
+
+    .video-modal-header {
+      flex: 0 0 auto
+    }
+
+    .video-frame-wrap {
+      flex: 1 1 auto;
+      height: auto;
+    }
+
+    .video-frame-wrap iframe {
+      width: 100%;
+      height: calc(92vh - 54px);
+      /* header ~54px */
+      max-height: calc(92vh - 54px);
+      display: block
+    }
+
+    @media (min-width: 1024px) {
+      .video-frame-wrap iframe {
+        height: calc(92vh - 60px);
+        max-height: calc(92vh - 60px);
+      }
+    }
+
+    /* Transparent modal dialog & frame for images; keep blur backdrop only */
+    .video-modal-dialog {
+      background: transparent;
+      box-shadow: none;
+      border-radius: 0;
+      max-height: 96vh;
+      display: flex;
+      flex-direction: column;
+      overflow: visible
+    }
+
+    .video-modal-header {
+      background: rgba(0, 0, 0, .55);
+      color: #fff;
+      border-radius: .5rem;
+      margin: 0 auto .5rem;
+      padding: .4rem .65rem;
+      width: min(1100px, 92vw);
+    }
+
+    .video-frame-wrap {
+      width: min(1100px, 92vw);
+      height: auto;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .video-frame-wrap iframe {
+      width: 100%;
+      height: calc(96vh - 60px);
+      max-height: calc(96vh - 60px);
+      background: transparent;
+      display: block
+    }
+
+    .video-modal-backdrop {
+      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, .38)
+    }
+
+    /* Cards ratio: 2:2.5 (vertical) across section */
+    #creative-working-projects .ap-card img {
+      aspect-ratio: 2/2.5 !important;
+      object-fit: cover;
+      width: 100%;
+      display: block
+    }
+
+    #creative-working-projects .video-card .thumb {
+      aspect-ratio: 2/2.5 !important
+    }
+
+    /* Keep grids */
+    #creative-working-projects .ap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px
+    }
+
+    @media (min-width:1024px) {
+      #creative-working-projects .ap-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    /* Card ratio a bit shorter (2 : 2.3) and tighter spacing */
+    #creative-working-projects .ap-card img {
+      aspect-ratio: 2/2.3 !important;
+      object-fit: cover;
+      width: 100%;
+      display: block
+    }
+
+    #creative-working-projects .video-card .thumb {
+      aspect-ratio: 2/2.3 !important
+    }
+
+    #creative-working-projects .card-caption {
+      padding: .4rem .6rem .55rem;
+      font-size: .92rem
+    }
+
+    /* Remove any dark block feel around iframe/image */
+    .video-modal-dialog {
+      background: transparent !important;
+      box-shadow: none !important;
+      border-radius: 0 !important
+    }
+
+    .video-modal-header {
+      background: transparent !important;
+      color: inherit;
+      padding: .25rem 0;
+      margin: 0 auto .25rem;
+      width: min(1100px, 92vw)
+    }
+
+    .video-frame-wrap {
+      background: transparent !important
+    }
+
+    .video-frame-wrap iframe {
+      background: transparent !important
+    }
+
+    /* Hover effect for cards */
+    #creative-working-projects .ap-card {
+      transition: transform .18s ease, box-shadow .18s ease
+    }
+
+    #creative-working-projects .ap-card:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, .08)
+    }
+
+    /* Reduce card height further: 2 : 2.1 */
+    #creative-working-projects .ap-card img {
+      aspect-ratio: 2/2.1 !important;
+      object-fit: cover;
+      width: 100%;
+      display: block
+    }
+
+    #creative-working-projects .video-card .thumb {
+      aspect-ratio: 2/2.1 !important
+    }
+
+    /* Invert hover animation on tabs/subtabs */
+    #creative-working-projects .tabs-wrap .tab:hover,
+    #creative-working-projects #design-works .subtab:hover {
+      filter: invert(1);
+      transition: filter .25s ease;
+    }
+
+    /* Shorter cards again (2 : 2.1) */
+    #creative-working-projects .ap-card img {
+      aspect-ratio: 2/2.1 !important;
+      object-fit: cover;
+      width: 100%;
+      display: block
+    }
+
+    #creative-working-projects .video-card .thumb {
+      aspect-ratio: 2/2.1 !important
+    }
+
+    /* 4-column desktop layout */
+    #creative-working-projects .ap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px
+    }
+
+    #creative-working-projects .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px
+    }
+
+    @media (min-width: 1200px) {
+      #creative-working-projects .ap-grid {
+        grid-template-columns: repeat(4, 1fr)
+      }
+
+      #creative-working-projects .video-grid {
+        grid-template-columns: repeat(4, 1fr)
+      }
+    }
+
+    /* ===== Design Works: Sidebar Layout ===== */
+    #design-works .dw-layout {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start
+    }
+
+    #design-works .dw-sidebar {
+      width: 220px;
+      flex: 0 0 220px;
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity .18s ease, transform .18s ease
+    }
+
+    #design-works.active .dw-sidebar {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    #design-works .dw-sidebar .subtabs {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      position: sticky;
+      top: 10px
+    }
+
+    #design-works .dw-sidebar .subtab {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: .55rem .8rem;
+      border: 1px solid rgba(0, 0, 0, .12);
+      border-radius: .6rem;
+      background: #fff;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, box-shadow .18s ease, transform .18s ease
+    }
+
+    #design-works .dw-sidebar .subtab:hover {
+      background: #a6bacc;
+      color: #fff;
+      transform: translateX(2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .10)
+    }
+
+    #design-works .dw-sidebar .subtab.active {
+      background: #3e5368;
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .15)
+    }
+
+    #design-works .dw-content {
+      flex: 1 1 auto
+    }
+
+    /* Mobile fallback: make sidebar horizontal on narrow screens */
+    @media (max-width: 900px) {
+      #design-works .dw-layout {
+        flex-direction: column
+      }
+
+      #design-works .dw-sidebar {
+        width: auto;
+        flex: 0 0 auto
+      }
+
+      #design-works .dw-sidebar .subtabs {
+        flex-direction: row;
+        overflow: auto hidden
+      }
+    }
+
+    /* ===== Section Bar: Hover & Shadow ===== */
+    #creative-working-projects .tabs {
+      display: flex;
+      gap: .5rem;
+      padding: .5rem;
+      background: #fff;
+      border-radius: .75rem;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .08);
+      margin-bottom: 1rem
+    }
+
+    #creative-working-projects .tabs .tab {
+      padding: .55rem 1rem;
+      border: 1px solid rgba(0, 0, 0, .12);
+      border-radius: .75rem;
+      background: #fff;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, box-shadow .18s ease, transform .18s ease, filter .18s ease
+    }
+
+    #creative-working-projects .tabs .tab:hover {
+      background: #273440;
+      color: #fff;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .15);
+      transform: translateY(-1px)
+    }
+
+    #creative-working-projects .tabs .tab.active {
+      background: #273440;
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .18)
+    }
+
+    /* Remove prior invert hover if present */
+    #creative-working-projects .tabs .tab:hover,
+    #creative-working-projects .subtabs .subtab:hover {
+      filter: none !important
+    }
+
+    /* Desktop: Design Works -> 3 columns, others remain 4 */
+    @media (min-width: 1200px) {
+      #design-works .ap-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+    }
+
+    /* Video sections: vertical thumbs and 3 columns */
+    #motion-graphics .video-grid .thumb img,
+    #promotional-videos .video-grid .thumb img,
+    #video-editing .video-grid .thumb img {
+      aspect-ratio: 2/2.1;
+      object-fit: cover;
+      width: 100%;
+      display: block
+    }
+
+    @media (min-width:1200px) {
+
+      #motion-graphics .video-grid,
+      #promotional-videos .video-grid,
+      #video-editing .video-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+    }
+
+    /* Video card hover */
+    a.video-card {
+      display: block;
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      transition: transform .18s ease, box-shadow .18s ease
+    }
+
+    a.video-card:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, .12)
+    }
+
+    a.video-card .thumb {
+      position: relative
+    }
+
+    a.video-card .thumb .play {
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      background: rgba(0, 0, 0, .5);
+      color: #fff;
+      padding: .25rem .45rem;
+      border-radius: .4rem;
+      font-size: .9rem
+    }
+
+    /* Tools badges */
+    a.video-card .meta {
+      padding: .5rem .65rem .75rem
+    }
+
+    a.video-card .meta h4 {
+      margin: 0 0 .35rem 0;
+      font-size: 1rem
+    }
+
+    a.video-card .meta .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem
+    }
+
+    a.video-card .meta .tool-badge {
+      background: #f1f1f1;
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: .5rem;
+      padding: .2rem .5rem;
+      font-size: .8rem
+    }
+
+    /* Ensure titles use theme color (not link blue) */
+    a.video-card .meta h4 {
+      color: var(--text, #111);
+    }
+
+    /* Slightly refined badge look */
+    a.video-card .meta .tool-badge {
+      background: #f6f6f6;
+      border: 1px solid rgba(0, 0, 0, .08);
+      color: #222
+    }
+
+    /* Badge color mapping (approximate to Adobe icon colors) */
+    a.video-card .meta .tool-badge {
+      background: var(--badge-bg, #f6f6f6);
+      border: 1px solid var(--badge, rgba(0, 0, 0, .08));
+      color: var(--badge-text, #222)
+    }
+
+    a.video-card .meta .badge-Ae {
+      --badge: #AE8FF9;
+      --badge-bg: rgba(174, 143, 249, .14);
+      --badge-text: #2f1f5d
+    }
+
+    a.video-card .meta .badge-Pr {
+      --badge: #9999FF;
+      --badge-bg: rgba(153, 153, 255, .14);
+      --badge-text: #26235c
+    }
+
+    /* Titles use theme text color, not default link blue */
+    a.video-card .meta h4 {
+      color: var(--text, #111)
+    }
+
+    /* Badge colors (Adobe-like) */
+    a.video-card .meta .tool-badge {
+      background: var(--badge-bg, #f6f6f6);
+      border: 1px solid var(--badge, rgba(0, 0, 0, .08));
+      color: var(--badge-text, #222)
+    }
+
+    a.video-card .meta .badge-Ae {
+      --badge: #AE8FF9;
+      --badge-bg: rgba(174, 143, 249, .14);
+      --badge-text: #2f1f5d
+    }
+
+    a.video-card .meta .badge-Pr {
+      --badge: #9999FF;
+      --badge-bg: rgba(153, 153, 255, .14);
+      --badge-text: #26235c
+    }
+  </style>
+</head>
+
+<body>
+  
+</div>
+  <header class="site-header">
+    <div class="brand"><a aria-label="Home" href="#top">
+      <img alt="" class="tb-logo"
+                src="assets\brand.png" /></a></div>
+    <nav aria-label="Primary" class="top-nav">
+      <a href="#about">About</a>
+      <a href="#experience">Work Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Honors</a>
+      <a href="#publications">Publications</a>
+      <a href="#academic-projects">Academic Projects</a>
+      <a href="#creative-working-projects">Creative &amp; Working Projects</a>
+      <a href="#leadership">Volunteering</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button aria-label="Toggle dark/light theme" class="toggle" id="themeToggle" title="Toggle theme"></button>
+  </header>
+  <main class="container" id="top">
+    <section class="hero-split">
+      <div class="hero-kicker">Let's build something together</div>
+      <div class="hero-left">
+        <h1 class="hello-line">
+          <span class="hello">hello,</span>
+          <span class="intro">I'm Saadman Alvi,</span>
+        </h1>
+        <h2 class="role-line">I am <span id="role"></span><span aria-hidden="true" class="cursor"></span></h2>
+        <p class="descriptor">
+          EEE engineer interested in project coordination, financial planning, and hands-on electronics.
+          I enjoy design, video editing, photography, sketching, volunteering, and exploring cultures.
+        </p>
+        <div class="cta-row">
+          <a aria-label="Open Updated CV PDF" class="btn" href="assets/updated_CV.pdf" rel="noopener"
+            target="_blank">Updated CV (till now)</a>
+          <div aria-label="Social links" class="socials">
+            <a aria-label="LinkedIn" class="social" href="https://www.linkedin.com/in/saadman-alvi-518268234/"
+              rel="noopener" target="_blank">in</a>
+            <a aria-label="X/Twitter" class="social" href="https://x.com/alvi_saadman" rel="noopener"
+              target="_blank">X</a>
+            <a aria-label="ResearchGate" class="social"
+              href="https://www.researchgate.net/profile/Saadman-Sakib-5?ev=hdr_xprf" rel="noopener"
+              target="_blank">Rᴳ</a>
+            <a aria-label="Facebook" class="social" href="https://www.facebook.com/saadman.alvi/" rel="noopener"
+              target="_blank">f</a>
+            <a aria-label="YouTube" class="social" href="https://www.youtube.com/@Drayke2608" rel="noopener"
+              target="_blank">▶</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img alt="Photo of Saadman Alvi" class="kenburns" src="assets/portrait.png" />
+      </div>
+    </section>
+    <section class="section" id="about">
+      <h3></h3>
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="whoiam"><span class="morph-text">Who I am</span></div>
+          <p class="quote">"Photography is an instant of life, captured for eternity." – George Eastman</p><br>
+          <p id="about-desc">I am a graduate in Electrical and Electronic Engineering with a strong foundation across
+            both technical and creative disciplines. My professional journey spans engineering internships to leadership
+            roles in project management — most notably serving as Senior Project In-Charge at Ahsan Real Estate Limited,
+            where I sharpened my capabilities in project coordination, financial oversight, and team leadership.
+            <br> </br>
+            Alongside my engineering experience, I have a deep passion for photography and visual storytelling,
+            supported by work in design and video editing. I also enjoy building electronics projects that merge
+            analytical thinking with hands-on creativity. Community volunteering and cultural exploration continue to
+            broaden my perspective. With this blend of engineering precision and creative expression, I thrive where
+            technology and storytelling meet.
+          </p>
+        </div>
+        <div class="about-right">
+          <div class="about-photo"><img alt="Working photo" id="about-photo-img" src="assets/about_photo_2x3.jpg" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Track record section -->
+    <section class="section" id="success"><br> </br>
+      <h3>Track Record till today — <span id="today"></span></h3><br> </br>
+      <div="Success statistics" class="counters">
+        <div class="counter-item"><span class="count" data-target="26">0</span><span class="label">Happy Clients</span>
+        </div>
+        <div class="counter-item"><span class="count" data-target="169">0</span><span class="label">Projects
+            Delivered</span></div>
+        <div class="counter-item"><span class="count" data-target="6">0</span><span class="label">Honors &amp;
+            Awards</span></div>
+        <div class="counter-item"><span class="count" data-target="7">0</span><span class="label">Volunteering</span>
+        </div>
+        <div class="counter-item"><span class="count" data-target="3">0</span><span class="label">Research
+            Publications</span></div>
+      </div>
+    </section>
+    <!-- Work Experience timeline -->
+    <section class="section" id="experience">
+      <div class="experience-grid">
+        <div class="exp-left">
+          <h3>Work Experience</h3>
+        </div>
+        <div class="exp-right">
+          <div aria-label="Work Experience timeline" class="timeline">
+            <article class="tl-item">
+              <img alt="Ahsan Real Estate Limited logo" class="tl-logo"
+                src="assets/logos/Ahsan_Real_Estate_Limited.png" />
+              <div class="tl-content">
+                <h4 class="tl-title">Senior Project In‑Charge <span class="tl-at">— Ahsan Real Estate Limited</span>
+                </h4>
+                <div class="tl-time">March 2025 – Present</div>
+              </div>
+            </article>
+            <article class="tl-item">
+              <img alt="Techno Power Electric Bangladesh Limited logo" class="tl-logo" src="assets/logos/Techno.png" />
+              <div class="tl-content">
+                <h4 class="tl-title">Executive (Internship) <span class="tl-at">— Techno Power Electric Bangladesh
+                    Limited</span></h4>
+                <div class="tl-time">December 2024 – February 2025</div>
+              </div>
+            </article>
+            <article class="tl-item">
+              <img alt="TOS Electric Company logo" class="tl-logo" src="assets/logos/TOS Electeric Company.png" />
+              <div class="tl-content">
+                <h4 class="tl-title">Trainee Engineer <span class="tl-at">— TOS Electric Company</span></h4>
+                <div class="tl-time">September 2024 – November 2024</div>
+              </div>
+            </article>
+            <article class="tl-item">
+              <img alt="Skill Shikhun logo" class="tl-logo" src="assets/logos/Skill_Shikhun.png" />
+              <div class="tl-content">
+                <h4 class="tl-title">Content Planner (Team Lead) <span class="tl-at">— Skill Shikhun</span></h4>
+                <div class="tl-time">January 2022 – October 2022</div>
+              </div>
+            </article>
+            <article class="tl-item">
+              <img alt="Step 2. Digital logo" class="tl-logo" src="assets/logos/Step2digital.png" />
+              <div class="tl-content">
+                <h4 class="tl-title">Designer <span class="tl-at">— Step 2. Digital</span></h4>
+                <div class="tl-time">December 2021 – February 2022</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="skills">
+      <div class="skills-grid">
+        <div class="skills-title">
+          <h3>Skill &amp; Specializations</h3>
+        </div>
+        <div class="skills-tech">
+          <h3>Technical &amp; Software Skills</h3>
+          <div class="skills-tags"><span class="skill-tag">Python</span><span class="skill-tag">C</span><span
+              class="skill-tag">C++</span><span class="skill-tag">Embedded C</span><span
+              class="skill-tag">Scikit-learn</span><span class="skill-tag">PyTorch</span><span
+              class="skill-tag">TensorFlow</span><span class="skill-tag">Proteus</span><span
+              class="skill-tag">Pspice</span><span class="skill-tag">Arduino</span><span
+              class="skill-tag">AutoCAD</span><span class="skill-tag">Fusion 360</span><span
+              class="skill-tag">MATLAB</span><span class="skill-tag">Adobe Premiere Pro</span><span
+              class="skill-tag">Adobe Photoshop</span><span class="skill-tag">After Effects</span><span
+              class="skill-tag">Lightroom</span><span class="skill-tag">LaTeX</span><span class="skill-tag">Microsoft
+              Office Suite</span><span class="skill-tag">Jupyter</span><span class="skill-tag">VS Code</span><span
+              class="skill-tag">Driving</span><span class="skill-tag">Cycling</span><span
+              class="skill-tag">Writing</span><span class="skill-tag">Photography</span><span class="skill-tag">Video
+              Editing</span></div>
+        </div>
+        <div class="skills-prof">
+          <h3>Professional &amp; Organizational Skills</h3>
+          <ul>
+            <li>Project Management &amp; Coordination</li>
+            <li>Team Leadership &amp; Supervision</li>
+            <li>Stakeholder Communication &amp; Client Interaction</li>
+            <li>Problem-Solving &amp; Strategic Thinking</li>
+            <li>Research, Reporting &amp; Technical Documentation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="education">
+      <div class="education-grid">
+        <div class="edu-left">
+          <h3>Education</h3>
+        </div>
+        <div class="edu-right">
+          <div aria-label="Education timeline" class="timeline edu">
+            <br></br>
+            <article class="tl-item">
+              <img alt="BRAC University logo" class="tl-logo" src="assets/logos/Brac_University.png" />
+              <div class="tl-content">
+                <h4 class="tl-title">Bachelor of Science — Electrical &amp; Electronic Engineering <span class="tl-at">—
+                    BRAC University</span></h4>
+                <div class="tl-time">Passed: 2024  •  CGPA: 3.40 / 4.00</div>
+              </div>
+            </article>
+            <article class="tl-item">
+              <img alt="Rajuk Uttara Model College logo" class="tl-logo" src="assets/logos/Rajuk_College.png" />
+              <div class="tl-content">
+                <h4 class="tl-title">Higher Secondary Certificate (HSC) <span class="tl-at">— Rajuk Uttara Model
+                    College</span></h4>
+                <div class="tl-time">Passed: 2019  •  GPA: 5.00 / 5.00</div>
+              </div>
+            </article>
+            <article class="tl-item">
+              <img alt="Ideal School and College logo" class="tl-logo" src="assets/logos/Ideal_School_College.png" />
+              <div class="tl-content">
+                <h4 class="tl-title">Secondary School Certificate (SSC) <span class="tl-at">— Ideal School and
+                    College</span></h4>
+                <div class="tl-time">Passed: 2017  •  GPA: 5.00 / 5.00</div>
+                <br></br>
+                <br></br>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="awards"><span id="honors" style="position:relative; top:-1px; display:block; height:0;"></span>
+      <h2>Honors &amp; Awards</h2><br></br>
+      <div class="awards-slider"><button aria-label="Previous" class="slide-btn prev">‹</button>
+        <div class="awards-track">
+          <div class="awards-track-inner">
+            <div class="award-card" data-href="assets/awards/buac-winner.pdf">
+              <div class="award-media"><img alt="Winner – Unconquerable (Color Smash 2022)"
+                  src="assets/awards/buac.jpg" />
+                <div class="award-overlay"><span>View certificate</span></div>
+              </div>
+              <div class="award-content">
+                <h3>Winner – Unconquerable (Color Smash 2022)</h3>
+                <p>BRAC University Adventure Club</p>
+              </div>
+            </div>
+
+            <div class="award-card" data-href="assets/awards/vcs-list.pdf">
+
+              <div class="award-media"><img alt="VC’s List – Summer 2020" src="assets/awards/vcs-list.jpg" />
+                <div class="award-overlay"><span>View certificate</span></div>
+              </div>
+
+              <div class="award-content">
+                <h3>VC’s List – Summer 2020</h3>
+                <p>BRAC University</p>
+              </div>
+            </div>
+
+            <div class="award-card" data-href="assets/awards/deans-list.pdf">
+              <div class="award-media"><img alt="Dean’s List – Spring 2021" src="assets/awards/deans-list.jpg" />
+                <div class="award-overlay"><span>View certificate</span></div>
+              </div>
+              <div class="award-content">
+                <h3>Dean’s List – Spring 2021</h3>
+                <p>BRAC University</p>
+              </div>
+            </div>
+            <div class="award-card" data-href="assets/awards/rajuk-intra-certificate.pdf">
+              <div class="award-media"><img alt="Champion – Rajuk Intra Talent Hunt 2017"
+                  src="assets/awards/rajuk-intra.jpg" />
+                <div class="award-overlay"><span>View certificate</span></div>
+              </div>
+              <div class="award-content">
+                <h3>Champion – Rajuk Intra Talent Hunt 2017</h3>
+                <p>Photography (Mobile)</p>
+              </div>
+            </div>
+            <div class="award-card" data-img="assets/awards/best-volunteer-npce.jpg">
+              <div class="award-media"><img alt="Best Volunteer Award" src="assets/awards/best-volunteer-npce.jpg" />
+                <div class="award-overlay"><span>View photo</span></div>
+              </div>
+              <div class="award-content">
+                <h3>Best Volunteer Award</h3>
+                <p>Rajuk College Photography Club – NPCE, 2017</p>
+              </div>
+            </div>
+            <div class="award-card" data-href="assets/awards/ssc-scholarship.pdf">
+              <div class="award-media"><img alt="SSC Talent Pool Scholarship (2017)"
+                  src="assets/awards/ssc-scholarship.jpg" />
+                <div class="award-overlay"><span>View certificate</span></div>
+              </div>
+              <div class="award-content">
+                <h3>SSC Talent Pool Scholarship (2017)</h3>
+                <p>Outstanding performance in SSC Examination</p>
+              </div>
+            </div>
+          </div>
+        </div><button aria-label="Next" class="slide-btn next">›</button>
+      </div>
+      <script>
+        (function () {
+          const slider = document.querySelector('#awards .awards-slider');
+          if (!slider) return;
+          const track = slider.querySelector('.awards-track');
+          const inner = slider.querySelector('.awards-track-inner');
+          const prev = slider.querySelector('.slide-btn.prev');
+          const next = slider.querySelector('.slide-btn.next');
+          function stepWidth() {
+            const card = inner.querySelector('.award-card');
+            if (!card) return 400;
+            const w = card.getBoundingClientRect().width;
+            const gap = parseFloat(getComputedStyle(inner).gap || 0);
+            return w + gap;
+          }
+          function updateButtons() {
+            const maxScroll = inner.scrollWidth - track.clientWidth;
+            prev.disabled = track.scrollLeft <= 0;
+            next.disabled = track.scrollLeft >= maxScroll - 2;
+          }
+          function go(dir) {
+            track.scrollBy({ left: stepWidth() * dir, behavior: 'smooth' });
+            setTimeout(updateButtons, 200);
+          }
+          prev.addEventListener('click', () => go(-1));
+          next.addEventListener('click', () => go(1));
+          // Much faster hover-based auto-scroll + slight edge acceleration
+          let autoDir = 0; // -1 left, 0 stop, +1 right
+          let rafId = null;
+          let lastTime = null;
+          function autoScroll(ts) {
+            if (autoDir === 0) { rafId = null; lastTime = null; return; }
+            if (!lastTime) lastTime = ts;
+            const dt = Math.min(40, ts - lastTime);
+            lastTime = ts;
+            // base speed
+            let speed = 0.8; // px/ms (~2600 px/s)
+            // Edge boost: closer to edge => faster
+            const rect = track.getBoundingClientRect();
+            const mouseX = window._awardsHoverX ?? (autoDir > 0 ? rect.right : rect.left);
+            const pct = Math.max(0, Math.min(1, (mouseX - rect.left) / rect.width));
+            const edgeFactor = autoDir < 0 ? (0.3 - pct) : (pct - 0.7);
+            if (edgeFactor > 0) speed += edgeFactor * 4.0; // up to +4x boost near corners
+            track.scrollLeft += autoDir * speed * dt;
+            updateButtons();
+            rafId = requestAnimationFrame(autoScroll);
+          }
+          function startAuto(dir) {
+            autoDir = dir;
+            if (rafId === null && autoDir !== 0) rafId = requestAnimationFrame(autoScroll);
+          }
+          function stopAuto() {
+            autoDir = 0;
+          }
+          function onMove(e) {
+            const rect = track.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            window._awardsHoverX = e.clientX;
+            const pct = x / rect.width;
+            if (pct < 0.40) startAuto(-1);
+            else if (pct > 0.60) startAuto(1);
+            else stopAuto();
+          }
+          track.addEventListener('mouseenter', onMove);
+          track.addEventListener('mousemove', onMove);
+          track.addEventListener('mouseleave', stopAuto);
+          window.addEventListener('blur', stopAuto);
+          // Whole-card click open (kept)
+          inner.querySelectorAll('.award-card').forEach(card => {
+            const url = card.dataset.href || card.dataset.img || '';
+            if (!url) return;
+            card.style.cursor = 'pointer';
+            card.setAttribute('role', 'link');
+            card.addEventListener('click', () => window.open(url, '_blank', 'noopener'));
+          });
+          window.addEventListener('resize', updateButtons);
+          track.addEventListener('scroll', updateButtons);
+          updateButtons();
+        })();
+      </script>
+    </section>
+    <section class="section" id="publications">
+      <h2>Publications</h2><br></br>
+      <div class="pubs-row"><a class="pub-card" href="https://ieeexplore.ieee.org/document/11021729" rel="noopener"
+          target="_blank">
+          <div class="pub-top"><span class="pub-badge">IEEE Xplore</span><span class="pub-year">Peer‑reviewed</span>
+          </div>
+          <h3 class="pub-title">An Efficient IoT-based Fire Detection System Using Quantized Deep Learning Model on
+            Resource-Constrained Devices</h3>
+          <p class="pub-meta">Click to view on IEEE Xplore</p><span class="pub-cta">View on IEEE Xplore →</span>
+        </a><a class="pub-card" href="https://ieeexplore.ieee.org/document/11013231" rel="noopener" target="_blank">
+          <div class="pub-top"><span class="pub-badge">IEEE Xplore</span><span class="pub-year">Peer‑reviewed</span>
+          </div>
+          <h3 class="pub-title">Voting and Stacking-based Ensemble Methods to Detect Bengali Spam SMS with Proposal for
+            Comprehensive Dataset</h3>
+          <p class="pub-meta">Click to view on IEEE Xplore</p><span class="pub-cta">View on IEEE Xplore →</span>
+        </a><a class="pub-card" href="https://ieeexplore.ieee.org/document/11013144" rel="noopener" target="_blank">
+          <div class="pub-top"><span class="pub-badge">IEEE Xplore</span><span class="pub-year">Peer‑reviewed</span>
+          </div>
+          <h3 class="pub-title">A Reliable Robotic Solution for Hospital Logistics: Implementation of Intelligent
+            Pathfinding and Control Strategy</h3>
+          <p class="pub-meta">Click to view on IEEE Xplore</p><span class="pub-cta">View on IEEE Xplore →</span>
+        </a></div>
+    </section>
+    <section id="academic-projects">
+      <style>
+        /* academic-projects grid v6 (4x2) */
+        #academic-projects {
+          padding: 64px 0
+        }
+
+        #academic-projects h2 {
+          font-size: 2.5rem;
+          margin: 0 0 18px
+        }
+
+        #academic-projects .ap-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 16px;
+        }
+
+        #academic-projects .ap-card {
+          background: #fff;
+          border-radius: 18px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+          overflow: hidden;
+          transition: transform .25s ease, box-shadow .25s ease, opacity .6s ease, transform .6s ease;
+          opacity: 0;
+          transform: translateY(18px);
+        }
+
+        #academic-projects .ap-card.revealed {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        #academic-projects .ap-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 14px 32px rgba(0, 0, 0, .12)
+        }
+
+        #academic-projects .ap-thumb {
+          aspect-ratio: 16/9;
+          display: block;
+          background: #f0f3f7;
+          position: relative;
+          overflow: hidden
+        }
+
+        #academic-projects .ap-thumb img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block
+        }
+
+        #academic-projects .ap-body {
+          padding: 14px 16px 16px
+        }
+
+        #academic-projects .ap-title {
+          font-size: 1rem;
+          font-weight: 700;
+          margin: 0 0 6px;
+          line-height: 1.3
+        }
+
+        #academic-projects .ap-desc {
+          font-size: .92rem;
+          color: #333;
+          margin: 0 0 12px;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden
+        }
+
+        #academic-projects .ap-actions {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap
+        }
+
+        #academic-projects .ap-actions a {
+          display: inline-block;
+          padding: 8px 12px;
+          border-radius: 10px;
+          text-decoration: none;
+          border: 1px solid #e2e6ea;
+          font-weight: 600;
+          font-size: .9rem
+        }
+
+        #academic-projects .ap-actions a:hover {
+          box-shadow: 0 2px 8px rgba(0, 0, 0, .08)
+        }
+
+        /* responsive */
+        @media (max-width: 1100px) {
+          #academic-projects .ap-grid {
+            grid-template-columns: repeat(3, 1fr)
+          }
+        }
+
+        @media (max-width: 800px) {
+          #academic-projects .ap-grid {
+            grid-template-columns: repeat(2, 1fr)
+          }
+        }
+
+        @media (max-width: 520px) {
+          #academic-projects .ap-grid {
+            grid-template-columns: 1fr
+          }
+        }
+
+        /* first card: keep actions in one row */
+        #academic-projects .ap-card:first-child .ap-actions {
+          flex-wrap: nowrap
+        }
+
+        /* v7: repeated reveal + parallax */
+        #academic-projects .ap-thumb {
+          will-change: transform
+        }
+
+        #academic-projects .ap-thumb img {
+          transform: translateY(0);
+          transition: transform .2s ease-out;
+          will-change: transform
+        }
+
+        /* v68 modal video player */
+        .video-modal {
+          position: fixed;
+          inset: 0;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999
+        }
+
+        .video-modal.active {
+          display: flex
+        }
+
+        .video-backdrop {
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, .55);
+          backdrop-filter: blur(6px);
+          opacity: 0;
+          transition: opacity .3s ease
+        }
+
+        .video-modal.active .video-backdrop {
+          opacity: 1
+        }
+
+        .video-content {
+          position: relative;
+          z-index: 2;
+          max-width: 80%;
+          max-height: 80%;
+          width: 960px;
+          aspect-ratio: 16/9;
+          transform: scale(.85);
+          opacity: 0;
+          transition: transform .35s ease, opacity .35s ease
+        }
+
+        .video-modal.active .video-content {
+          transform: scale(1);
+          opacity: 1
+        }
+
+        .video-content iframe {
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          box-shadow: 0 12px 36px rgba(0, 0, 0, .5)
+        }
+
+        .video-close {
+          position: absolute;
+          top: -42px;
+          right: 0;
+          font-size: 32px;
+          color: #fff;
+          background: none;
+          border: none;
+          cursor: pointer;
+          transition: transform .2s ease
+        }
+
+        .video-close:hover {
+          transform: scale(1.2)
+        }
+
+        /* v69 fixes */
+
+        #academic-projects .ap-card {
+          opacity: 1;
+          transform: translateY(0)
+        }
+
+        #academic-projects .ap-card.hidden {
+          opacity: 0;
+          transform: translateY(18px)
+        }
+      </style>
+      <h2>Academic Projects</h2><br></sectionbr>
+      <div class="ap-grid">
+        <div class="ap-card">
+          <div class="ap-thumb"><img
+              alt="CardiSim: A Cost-Effective Electrocardiogram Simulator for Medical Training and Research (Thesis)"
+              loading="lazy"
+              src="https://drive.google.com/thumbnail?id=19U5gj0bQW-gPPVE7zXPE7z_LpwWVi3Sf&amp;sz=w1200" /></div>
+          <div class="ap-body">
+            <div class="ap-title">CardiSim: A Cost-Effective Electrocardiogram Simulator for Medical Training and
+              Research (Thesis)</div>
+            <div class="ap-desc">CardiSim is an innovative, budget-friendly ECG simulator designed to provide a
+              realistic and versatile platform for researchers to simulate various ECG patterns, facilitating a deeper
+              understanding of cardiac diagnostics.</div>
+            <div class="ap-actions"><a
+                href="https://drive.google.com/file/d/19U5gj0bQW-gPPVE7zXPE7z_LpwWVi3Sf/view?usp=drive_link"
+                rel="noopener" target="_blank">📄 View Report</a>
+
+              <a aria-label="Watch Presentation" class="video-card" data-title="▶ Watch Presentation"
+                data-video-url="https://youtu.be/b-8vG2YV-5s" href="#" rel="noopener" target="_blank">▶ Watch
+                Presentation</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ap-card">
+          <div class="ap-thumb"><img alt="The Factory Floor [CST 304]" loading="lazy"
+              src="https://img.youtube.com/vi/lUX6iJM4Fnw/hqdefault.jpg" /></div>
+          <div class="ap-body">
+            <div class="ap-title">The Factory Floor [CST 304]</div>
+            <div class="ap-desc">A documentary film that uncovers the hardships faced by Bangladesh garment workers,
+              including wage disputes, health risks, and workplace harassment. It also highlights efforts by two
+              organizations aiding these workers.</div>
+            <div class="ap-actions">
+
+              <a aria-label="Watch Video" class="video-card" data-title="▶ Watch Video"
+                data-video-url="https://youtu.be/lUX6iJM4Fnw?si=zjx3Eh5V0q4wGoEU" href="#" rel="noopener"
+                target="_blank">▶ Watch Video</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="ap-card">
+          <div class="ap-thumb"><img alt="Logic Gate-Based Voting Machine [EEE 283]" loading="lazy"
+              src="https://drive.google.com/thumbnail?id=1V4vPFIxRspxxBEDiVklD9IFwAs0cDrwb&amp;sz=w1200" /></div>
+          <div class="ap-body">
+            <div class="ap-title">Logic Gate-Based Voting Machine [EEE 283]</div>
+            <div class="ap-desc">Developed a logic gate-based voting machine capable of counting up to 10 votes for each
+              of three contestants. Integrated a stopwatch to track voting time, enhancing functionality and usability
+              for time-sensitive voting scenarios.</div>
+            <div class="ap-actions"><a
+                href="https://drive.google.com/file/d/1V4vPFIxRspxxBEDiVklD9IFwAs0cDrwb/view?usp=drive_link"
+                rel="noopener" target="_blank">📄 View Report</a></div>
+          </div>
+        </div>
+        <div class="ap-card">
+          <div class="ap-thumb"><img alt="Secure ATM: A Microcontroller-Based ATM Booth System [EEE 365]" loading="lazy"
+              src="https://drive.google.com/thumbnail?id=1STOHtzJ1xvcmQ1zSxXiFgFBUw8nITu-D&amp;sz=w1200" /></div>
+          <div class="ap-body">
+            <div class="ap-title">Secure ATM: A Microcontroller-Based ATM Booth System [EEE 365]</div>
+            <div class="ap-desc">Developed an ATmega32-based security system with RFID and keypad authentication.
+              Integrated sensors to enhance booth safety.</div>
+            <div class="ap-actions"><a
+                href="https://drive.google.com/file/d/1STOHtzJ1xvcmQ1zSxXiFgFBUw8nITu-D/view?usp=drive_link"
+                rel="noopener" target="_blank">📄 View Report</a></div>
+          </div>
+        </div>
+        <div class="ap-card">
+          <div class="ap-thumb"><img
+              alt="Developing Floor Plan Designs for different floors with distinct approaches [EEE 384]" loading="lazy"
+              src="https://drive.google.com/thumbnail?id=1ORVWAoihzTipGRrc5QfRiDfU-e54kmAT&amp;sz=w1200" /></div>
+          <div class="ap-body">
+            <div class="ap-title">Developing Floor Plan Designs for different floors with distinct approaches [EEE 384]
+            </div>
+            <div class="ap-desc">Designed floor layouts of 2nd and 3rd floors of UB8 of Brac University, applying
+              architectural planning principles.</div>
+            <div class="ap-actions"><a
+                href="https://drive.google.com/file/d/1ORVWAoihzTipGRrc5QfRiDfU-e54kmAT/view?usp=drive_link"
+                rel="noopener" target="_blank">📄 View Report</a></div>
+          </div>
+        </div>
+        <div class="ap-card">
+          <div class="ap-thumb"><img alt="Design an Automatic 6-volt DC Battery Charger [EEE 421]" loading="lazy"
+              src="https://drive.google.com/thumbnail?id=1yXnz-HqX2ODsid63GILjNiqtVyuPu1eW&amp;sz=w1200" /></div>
+          <div class="ap-body">
+            <div class="ap-title">Design an Automatic 6-volt DC Battery Charger [EEE 421]</div>
+            <div class="ap-desc">Designed and analyzed an automatic 6-volt DC battery charger using rectifiers, Buck
+              converters, and control circuits for automatic functionality.</div>
+            <div class="ap-actions"><a
+                href="https://drive.google.com/file/d/1yXnz-HqX2ODsid63GILjNiqtVyuPu1eW/view?usp=drive_link"
+                rel="noopener" target="_blank">📄 View Report</a></div>
+          </div>
+        </div>
+        <div class="ap-card">
+          <div class="ap-thumb"><img
+              alt="Machine Learning for Email Spam Classification: A Comparative Analysis [EEE 472]" loading="lazy"
+              src="https://drive.google.com/thumbnail?id=10r80YCxOEC3XHhRtzYg0uxV_pihsHxbQ&amp;sz=w1200" /></div>
+          <div class="ap-body">
+            <div class="ap-title">Machine Learning for Email Spam Classification: A Comparative Analysis [EEE 472]</div>
+            <div class="ap-desc">Implemented Decision Trees, KNN, Logistic Regression, and Naive Bayes for spam
+              classification. Compared models to identify the most effective approach.</div>
+            <div class="ap-actions"><a
+                href="https://drive.google.com/file/d/10r80YCxOEC3XHhRtzYg0uxV_pihsHxbQ/view?usp=drive_link"
+                rel="noopener" target="_blank">📄 View Report</a></div>
+          </div>
+        </div>
+        <div class="ap-card">
+          <div class="ap-thumb"><img alt="The Temperature Box: An Introductory Control System Project [EEE 305]"
+              loading="lazy"
+              src="https://drive.google.com/thumbnail?id=1QINFnX7x--McTcDZHx5yiQnb00iexlKU&amp;sz=w1200" /></div>
+          <div class="ap-body">
+            <div class="ap-title">The Temperature Box: An Introductory Control System Project [EEE 305]</div>
+            <div class="ap-desc">Designed a closed-loop feedback temperature control box using analog and digital
+              controllers to regulate relay output based on LM35 &amp; DS18B20 sensors.</div>
+            <div class="ap-actions"><a
+                href="https://drive.google.com/file/d/1QINFnX7x--McTcDZHx5yiQnb00iexlKU/view?usp=drive_link"
+                rel="noopener" target="_blank">📄 View Report</a></div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const root = document.getElementById('academic-projects');
+          if (!root) return;
+          const cards = Array.from(root.querySelectorAll('.ap-card'));
+          const thumbs = Array.from(root.querySelectorAll('.ap-thumb img'));
+          const modal = document.getElementById('videoModal');
+          const frame = document.getElementById('videoFrame');
+          const backdrop = modal.querySelector('.video-backdrop');
+          const closeBtn = modal.querySelector('.video-close');
+          // Apply hidden initially for animation
+          cards.forEach(c => c.classList.add('hidden'));
+          // Repeated reveal animation
+          const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+              if (e.isIntersecting) {
+                e.target.classList.add('revealed');
+                e.target.classList.remove('hidden');
+              } else {
+                e.target.classList.remove('revealed');
+                e.target.classList.add('hidden');
+              }
+            });
+          }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+          cards.forEach((c, i) => {
+            c.style.transitionDelay = (i * 40) + "ms";
+            io.observe(c);
+          });
+          // Parallax thumbnails
+          function parallax() {
+            const vh = window.innerHeight || 1;
+            thumbs.forEach(img => {
+              const rect = img.getBoundingClientRect();
+              const center = rect.top + rect.height / 2;
+              const f = Math.max(-1, Math.min(1, (center - vh / 2) / (vh / 2)));
+              const shift = -6 * f;
+              img.style.transform = `translateY(${shift}px)`;
+            });
+          }
+          window.addEventListener('scroll', parallax, { passive: true });
+          window.addEventListener('resize', parallax);
+          parallax();
+          // Modal video handling
+          root.querySelectorAll('.ap-actions a').forEach(link => {
+            if (link.textContent.includes('Watch')) {
+              link.addEventListener('click', function (e) {
+                e.preventDefault(); // stop default new tab
+                e.stopPropagation();
+                const url = this.getAttribute('href');
+                if (!url) return;
+                // Convert YouTube URL to embed form
+                let vid = null;
+                const m1 = url.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
+                const m2 = url.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
+                if (m1) vid = m1[1]; else if (m2) vid = m2[1];
+                if (!vid) {
+                  // fallback open in new tab if not a YouTube URL
+                  window.open(url, '_blank');
+                  return;
+                }
+                frame.src = `https://www.youtube.com/embed/${vid}?autoplay=1`;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+              }, { passive: false });
+            }
+          });
+          function closeModal() {
+            modal.classList.remove('active');
+            frame.src = "";
+            document.body.style.overflow = '';
+          }
+          closeBtn.addEventListener('click', closeModal);
+          backdrop.addEventListener('click', closeModal);
+          window.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") { closeModal(); }
+          });
+        })();</script>
+      <div class="video-modal" id="videoModal">
+        <div class="video-content">
+          <button aria-label="Close" class="video-close">×</button>
+          <iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" id="videoFrame" src=""></iframe>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="creative-working-projects">
+
+      <div class="container">
+        <h2>Creative &amp; Working Projects</h2>
+        <br></divbr>
+        <div class="tabs">
+          <button class="tab active" data-tab="design-works">Design Works</button>
+          <button class="tab" data-tab="motion-graphics">Motion Graphic Works</button>
+          <button class="tab" data-tab="promotional-videos">Promotional Videos</button>
+          <button class="tab" data-tab="video-editing">Video Editing</button>
+        </div>
+        <div class="tab-panels">
+          <div class="tab-panel active" id="design-works">
+            <div class="dw-layout">
+              <aside class="dw-sidebar">
+                <div class="subtabs"><button class="subtab active" data-subtab="brand-logos">Brand Logos</button><button
+                    class="subtab" data-subtab="social-posts">Social Posts</button><button class="subtab"
+                    data-subtab="others">Others</button></div>
+              </aside>
+              <div class="dw-content">
+                <div class="subtab-panels">
+                  <div class="subtab-panel active" id="panel-brand-logos">
+                    <div class="ap-grid">
+                      <div class="ap-card"><a aria-label="View full" class="video-card" data-title="AREL — Brand Logo"
+                          data-video-url="assets/design-works/Brand Logos/AREL_brand.jpg" href="#"><img alt="AREL"
+                            loading="lazy" src="assets/design-works/_thumbs_2x2_5/AREL_brand_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Arel — Brand Logo</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Cyril 01 — Brand Logo"
+                          data-video-url="assets/design-works/Brand Logos/Cyril-01.jpg" href="#"><img alt="Cyril 01"
+                            loading="lazy" src="assets/design-works/_thumbs_2x2_5/Cyril-01_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Cyril — Brand Logo</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="HMmedia 01 01 — Brand Logo"
+                          data-video-url="assets/design-works/Brand Logos/HMmedia-01-01.jpg" href="#"><img
+                            alt="HMmedia 01 01" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/HMmedia-01-01_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Hmmedia — Brand Logo</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Jannat Lounge 01 — Brand Logo"
+                          data-video-url="assets/design-works/Brand Logos/Jannat Lounge-01.jpg" href="#"><img
+                            alt="Jannat Lounge 01" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Jannat Lounge-01_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Jannat Lounge — Brand Logo</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="SkillShikhunLogo 01 — Brand Logo"
+                          data-video-url="assets/design-works/Brand Logos/SkillShikhunLogo-01.jpg" href="#"><img
+                            alt="SkillShikhunLogo 01" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/SkillShikhunLogo-01_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Skillshikhunlogo — Brand Logo</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Unleashed By Ahsan — Brand Logo"
+                          data-video-url="assets/design-works/Brand Logos/Unleashed By Ahsan.jpg" href="#"><img
+                            alt="Unleashed By Ahsan" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Unleashed By Ahsan_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Unleashed By Ahsan — Brand Logo</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="subtab-panel" id="panel-social-posts">
+                    <div class="ap-grid">
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Arel Post — Social Post"
+                          data-video-url="assets/design-works/Social Posts/Arel Post_social.jpg" href="#"><img
+                            alt="Arel Post" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Arel Post_social_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Arel Post — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card" data-title="Arel — Social Post"
+                          data-video-url="assets/design-works/Social Posts/Arel_social.jpg" href="#"><img alt="Arel"
+                            loading="lazy" src="assets/design-works/_thumbs_2x2_5/Arel_social_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Arel — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Course post — Social Post"
+                          data-video-url="assets/design-works/Social Posts/Course post.jpg" href="#"><img
+                            alt="Course post" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Course post_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Course Post — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Fathers day — Social Post"
+                          data-video-url="assets/design-works/Social Posts/Fathers day.jpg" href="#"><img
+                            alt="Fathers day" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Fathers day_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Fathers Day — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="M block 2 — Social Post"
+                          data-video-url="assets/design-works/Social Posts/M block 2.jpg" href="#"><img alt="M block 2"
+                            loading="lazy" src="assets/design-works/_thumbs_2x2_5/M block 2_t2x2_5.jpg" /></a>
+                        <div class="card-caption">M Block — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="M block — Social Post"
+                          data-video-url="assets/design-works/Social Posts/M block.jpg" href="#"><img alt="M block"
+                            loading="lazy" src="assets/design-works/_thumbs_2x2_5/M block_t2x2_5.jpg" /></a>
+                        <div class="card-caption">M Block — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Miss fried — Social Post"
+                          data-video-url="assets/design-works/Social Posts/Miss fried.jpg" href="#"><img
+                            alt="Miss fried" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Miss fried_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Miss Fried — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card" data-title="PAban — Social Post"
+                          data-video-url="assets/design-works/Social Posts/PAban.jpg" href="#"><img alt="PAban"
+                            loading="lazy" src="assets/design-works/_thumbs_2x2_5/PAban_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Paban — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Paban food 5 min — Social Post"
+                          data-video-url="assets/design-works/Social Posts/Paban food 5-min.jpg" href="#"><img
+                            alt="Paban food 5 min" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Paban food 5-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Paban Food Min — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Paban food min — Social Post"
+                          data-video-url="assets/design-works/Social Posts/Paban food-min.jpg" href="#"><img
+                            alt="Paban food min" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Paban food-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Paban Food Min — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Ramadan Mubarak min — Social Post"
+                          data-video-url="assets/design-works/Social Posts/Ramadan Mubarak-min.jpg" href="#"><img
+                            alt="Ramadan Mubarak min" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Ramadan Mubarak-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Ramadan Mubarak Min — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Soccer kick min — Social Post"
+                          data-video-url="assets/design-works/Social Posts/Soccer kick-min.jpg" href="#"><img
+                            alt="Soccer kick min" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Soccer kick-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Soccer Kick Min — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Women Day min — Social Post"
+                          data-video-url="assets/design-works/Social Posts/Women Day-min.jpg" href="#"><img
+                            alt="Women Day min" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Women Day-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Women Day Min — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="ambience — Social Post"
+                          data-video-url="assets/design-works/Social Posts/ambience.jpg" href="#"><img alt="ambience"
+                            loading="lazy" src="assets/design-works/_thumbs_2x2_5/ambience_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Ambience — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="app download — Social Post"
+                          data-video-url="assets/design-works/Social Posts/app download.jpg" href="#"><img
+                            alt="app download" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/app download_t2x2_5.jpg" /></a>
+                        <div class="card-caption">App Download — Social Post</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="job Post — Social Post"
+                          data-video-url="assets/design-works/Social Posts/job Post.jpg" href="#"><img alt="job Post"
+                            loading="lazy" src="assets/design-works/_thumbs_2x2_5/job Post_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Job Post — Social Post</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="subtab-panel" id="panel-others">
+                    <div class="ap-grid">
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Eid Collection min — Other"
+                          data-video-url="assets/design-works/Others/Eid Collection-min.jpg" href="#"><img
+                            alt="Eid Collection min" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Eid Collection-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Eid Collection Min — Other</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Facebook cover AREL min — Other"
+                          data-video-url="assets/design-works/Others/Facebook cover AREL-min.jpg" href="#"><img
+                            alt="Facebook cover AREL min" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Facebook cover AREL-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Facebook Cover Arel Min — Other</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Id Card Ribbon design 01 min — Other"
+                          data-video-url="assets/design-works/Others/Id Card Ribbon design-01-min.jpg" href="#"><img
+                            alt="Id Card Ribbon design 01 min" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Id Card Ribbon design-01-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Id Card Ribbon Design Min — Other</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card" data-title="Jersey min — Other"
+                          data-video-url="assets/design-works/Others/Jersey-min.jpg" href="#"><img alt="Jersey min"
+                            loading="lazy" src="assets/design-works/_thumbs_2x2_5/Jersey-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Jersey Min — Other</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Ramadan Calender Design min — Other"
+                          data-video-url="assets/design-works/Others/Ramadan Calender Design-min.jpg" href="#"><img
+                            alt="Ramadan Calender Design min" loading="lazy"
+                            src="assets/design-works/Others/Ramadan Calender Design-min.jpg" /></a>
+                        <div class="card-caption">Ramadan Calender Design Min — Other</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card" data-title="Wedding min — Other"
+                          data-video-url="assets/design-works/Others/Wedding-min.jpg" href="#"><img alt="Wedding min"
+                            loading="lazy" src="assets/design-works/_thumbs_2x2_5/Wedding-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Wedding Min — Other</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="Youtube Thumbnail min — Other"
+                          data-video-url="assets/design-works/Others/Youtube Thumbnail-min.jpg" href="#"><img
+                            alt="Youtube Thumbnail min" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/Youtube Thumbnail-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Youtube Thumbnail Min — Other</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="facebook cover min — Other"
+                          data-video-url="assets/design-works/Others/facebook-cover-min.jpg" href="#"><img
+                            alt="facebook cover min" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/facebook-cover-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Facebook Cover Min — Other</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="facebook group cover min — Other"
+                          data-video-url="assets/design-works/Others/facebook-group-cover-min.jpg" href="#"><img
+                            alt="facebook group cover min" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/facebook-group-cover-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Facebook Group Cover Min — Other</div>
+                      </div>
+                      <div class="ap-card"><a aria-label="View full" class="video-card"
+                          data-title="wedding design min — Other"
+                          data-video-url="assets/design-works/Others/wedding design-min.jpg" href="#"><img
+                            alt="wedding design min" loading="lazy"
+                            src="assets/design-works/_thumbs_2x2_5/wedding design-min_t2x2_5.jpg" /></a>
+                        <div class="card-caption">Wedding Design Min — Other</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="motion-graphics">
+            <div class="subsection">
+              <h3>Motion Graphic</h3>
+              <div class="grid video-grid">
+                <a aria-label="Play Motion Graphic" class="video-card" data-title="Cafe Majlish Delivery Promo"
+                  data-video-url="https://youtu.be/thxsCaKvU6g" href="#">
+                  <div class="thumb"><img alt="Cafe Mosjish Delivery Promo" loading="lazy"
+                      src="https://drive.google.com/thumbnail?id=1W2g-Cohb-43j1xfb3Zs9RDPViXLVkw4f&amp;sz=w1000" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>Cafe Mosjish Delivery Promo</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Ai</span><span
+                        class="tool-badge badge-Ae">Ae</span></div>
+                    
+                    
+                  </div>
+                </a>
+                <a aria-label="Play Motion Graphic" class="video-card" data-title="Cricket Scorecard Promo"
+                  data-video-url="https://youtu.be/xhr-5qFGPhM" href="#">
+                  <div class="thumb"><img alt="Cricket Scorecard Promo" loading="lazy"
+                      src="https://drive.google.com/thumbnail?id=1Gu6zsLNaTGkNVxNkcv3RBtxceYl2_N9E&amp;sz=w1000" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>Cricket Scorecard Promo</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Ai</span><span
+                        class="tool-badge badge-Ae">Ae</span></div>
+                  </div>
+                </a>
+                <a aria-label="Play Motion Graphic" class="video-card" data-title="Fast and Furious Delivery Promo"
+                  data-video-url="https://youtu.be/6NKWYcZnHqU" href="#">
+                  <div class="thumb"><img alt="Fast and Furious Delivery Promo" loading="lazy"
+                      src="https://drive.google.com/thumbnail?id=1GXzz-93rsHCYH9rGMV7fi5GmPhhKnq3S&amp;sz=w1000" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>Fast and Furious Delivery Promo</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Ai</span><span
+                        class="tool-badge badge-Ae">Ae</span></div>
+                  </div>
+                </a>
+                <a aria-label="Play Motion Graphic" class="video-card" data-title="Shopno Shiri Promo"
+                  data-video-url="https://youtu.be/eqtP-zwBT18" href="#">
+                  <div class="thumb"><img alt="Shopno Shiri Promo" loading="lazy"
+                      src="https://drive.google.com/thumbnail?id=1LkF0mU_ZPvM63fqF4t_90wHXwwFmdqXq&amp;sz=w1000" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>Shopno Shiri Promo</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Ai</span><span
+                        class="tool-badge badge-Ae">Ae</span></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="promotional-videos">
+            <div class="subsection">
+              <h3>Promotional Video</h3>
+              <div class="grid video-grid">
+                <a aria-label="Play Promotional Video" class="video-card" data-title="IEEE Membership Campaign"
+                  data-video-url="https://www.youtube.com/watch?v=2b4KCRN25m8" href="#">
+                  <div class="thumb"><img alt="IEEE Membership Campaign" loading="lazy"
+                      sizes="(min-width: 1200px) 25vw, 50vw" src="https://i.ytimg.com/vi/2b4KCRN25m8/hqdefault.jpg"
+                      srcset="https://i.ytimg.com/vi/2b4KCRN25m8/maxresdefault.jpg 1280w, https://i.ytimg.com/vi/2b4KCRN25m8/sddefault.jpg 640w, https://i.ytimg.com/vi/2b4KCRN25m8/hqdefault.jpg 480w" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>IEEE Membership Campaign</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Pr</span><span
+                        class="tool-badge badge-Ae">Ae</span></div>
+                  </div>
+                </a>
+                <a aria-label="Play Promotional Video" class="video-card" data-title="Lia Cars"
+                  data-video-url="https://youtu.be/NhcvTNXsv74" href="#">
+                  <div class="thumb"><img alt="Lia Cars" loading="lazy"
+                      src="https://drive.google.com/thumbnail?id=1kWDY8vnYmQshn028TQ7VSc4abF3JKVeP&amp;sz=w1000" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>Lia Cars</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Pr</span><span
+                        class="tool-badge badge-Ae">Ae</span></div>
+                  </div>
+                </a>
+                <a aria-label="Play Promotional Video" class="video-card" data-title="X11 Studio"
+                  data-video-url="https://youtu.be/KucRJ-yyJDA?si=j1QmnjUpUd6wb13h" href="#">
+                  <div class="thumb"><img alt="X11 Studio" loading="lazy" sizes="(min-width: 1200px) 25vw, 50vw"
+                      src="https://i.ytimg.com/vi/KucRJ-yyJDA/hqdefault.jpg"
+                      srcset="https://i.ytimg.com/vi/KucRJ-yyJDA/maxresdefault.jpg 1280w, https://i.ytimg.com/vi/KucRJ-yyJDA/sddefault.jpg 640w, https://i.ytimg.com/vi/KucRJ-yyJDA/hqdefault.jpg 480w" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>X11 Studio</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Pr</span><span
+                        class="tool-badge badge-Ae">Ae</span></div>
+                  </div>
+                </a>
+                <a aria-label="Play Promotional Video" class="video-card" data-title="Brac University Cultural CLub"
+                  data-video-url="https://youtu.be/tvS0RF305dM" href="#">
+                  <div class="thumb"><img alt="Brac University Cultural CLub" loading="lazy"
+                      src="https://drive.google.com/thumbnail?id=1Swy5BBt0NfksZV1_PeI4UeQNYQj16tKP&amp;sz=w1000" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>Brac University Cultural CLub</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Pr</span><span
+                        class="tool-badge badge-Ae">Ae</span></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="video-editing">
+            <div class="subsection">
+              <h3>Video Editing</h3>
+              <div class="grid video-grid">
+                <a aria-label="Play Video Editing" class="video-card" data-title="Project demonstration"
+                  data-video-url="https://youtu.be/2MrIdyqOXco" href="#">
+                  <div class="thumb"><img alt="Project demonstration" loading="lazy"
+                      sizes="(min-width: 1200px) 25vw, 50vw" src="https://i.ytimg.com/vi/2MrIdyqOXco/hqdefault.jpg"
+                      srcset="https://i.ytimg.com/vi/2MrIdyqOXco/maxresdefault.jpg 1280w, https://i.ytimg.com/vi/2MrIdyqOXco/sddefault.jpg 640w, https://i.ytimg.com/vi/2MrIdyqOXco/hqdefault.jpg 480w" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>Project demonstration</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Pr</span></div>
+                  </div>
+                </a>
+                <a aria-label="Play Video Editing" class="video-card" data-title="Travel St. Martin"
+                  data-video-url="https://youtu.be/ZPPFikMdHWk?si=JIKinozi5Brj6Esy" href="#">
+                  <div class="thumb"><img alt="Travel St. Martin" loading="lazy" sizes="(min-width: 1200px) 25vw, 50vw"
+                      src="https://i.ytimg.com/vi/ZPPFikMdHWk/hqdefault.jpg"
+                      srcset="https://i.ytimg.com/vi/ZPPFikMdHWk/maxresdefault.jpg 1280w, https://i.ytimg.com/vi/ZPPFikMdHWk/sddefault.jpg 640w, https://i.ytimg.com/vi/ZPPFikMdHWk/hqdefault.jpg 480w" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>Travel St. Martin</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Pr</span></div>
+                  </div>
+                </a>
+                <a aria-label="Play Video Editing" class="video-card" data-title="Nature"
+                  data-video-url="https://youtu.be/gV1ymcJvgZI?si=tgkorKMnag_DUIhW" href="#">
+                  <div class="thumb"><img alt="Nature" loading="lazy" sizes="(min-width: 1200px) 25vw, 50vw"
+                      src="https://i.ytimg.com/vi/gV1ymcJvgZI/hqdefault.jpg"
+                      srcset="https://i.ytimg.com/vi/gV1ymcJvgZI/maxresdefault.jpg 1280w, https://i.ytimg.com/vi/gV1ymcJvgZI/sddefault.jpg 640w, https://i.ytimg.com/vi/gV1ymcJvgZI/hqdefault.jpg 480w" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>Nature</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Pr</span></div>
+                  </div>
+                </a>
+                <a aria-label="Play Video Editing" class="video-card" data-title="ShortFilm"
+                  data-video-url="https://youtu.be/K4F1Lu4O-fs?si=gpFZ9cjr4CFLUr9v" href="#">
+                  <div class="thumb"><img alt="ShortFilm" loading="lazy" sizes="(min-width: 1200px) 25vw, 50vw"
+                      src="https://i.ytimg.com/vi/K4F1Lu4O-fs/hqdefault.jpg"
+                      srcset="https://i.ytimg.com/vi/K4F1Lu4O-fs/maxresdefault.jpg 1280w, https://i.ytimg.com/vi/K4F1Lu4O-fs/sddefault.jpg 640w, https://i.ytimg.com/vi/K4F1Lu4O-fs/hqdefault.jpg 480w" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>ShortFilm</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Pr</span></div>
+                  </div>
+                </a>
+                <a aria-label="Play Video Editing" class="video-card" data-title="Arina Bangladesh Event Promo"
+                  data-video-url="https://youtu.be/426x4vi2FL8" href="#">
+                  <div class="thumb"><img alt="Arina Bangladesh Event Promo" loading="lazy"
+                      sizes="(min-width: 1200px) 25vw, 50vw" src="https://i.ytimg.com/vi/426x4vi2FL8/hqdefault.jpg"
+                      srcset="https://i.ytimg.com/vi/426x4vi2FL8/maxresdefault.jpg 1280w, https://i.ytimg.com/vi/426x4vi2FL8/sddefault.jpg 640w, https://i.ytimg.com/vi/426x4vi2FL8/hqdefault.jpg 480w" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>Arina Bangladesh Event Promo</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Pr</span></div>
+                  </div>
+                </a>
+                <a aria-label="Play Video Editing" class="video-card" data-title="AREL Reels"
+                  data-video-url="https://player.vimeo.com/video/1115259207?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" href="#">
+                  <div class="thumb"><img alt="AREL Reels" loading="lazy" sizes="(min-width: 1200px) 25vw, 50vw"
+                      src="https://i.ytimg.com/vi/jENpprrT8W0/hqdefault.jpg"
+                      srcset="https://i.ytimg.com/vi/jENpprrT8W0/maxresdefault.jpg 1280w, https://i.ytimg.com/vi/jENpprrT8W0/sddefault.jpg 640w, https://i.ytimg.com/vi/jENpprrT8W0/hqdefault.jpg 480w" /><span
+                      class="play">▶</span></div>
+                  <div class="meta">
+                    <h4>AREL Reels</h4>
+                    <div class="tools"><span class="tool-badge badge-Pr">Pr</span></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Reusable modal video player -->
+      <div aria-hidden="true" class="video-modal" id="video-modal">
+        <div class="video-modal-backdrop" data-close="true"></div>
+        <div aria-label="Video player" aria-modal="true" class="video-modal-dialog" role="dialog">
+          <button aria-label="Close (Esc)" class="video-close" data-close="true">×</button>
+          <div class="video-frame-wrap">
+            <iframe allow="autoplay; encrypted-media" allowfullscreen="" id="video-frame" src=""
+              title="Embedded video"></iframe>
+            <img alt="Image preview" id="image-view" src="" />
+          </div>
+        </div>
+      </div>
+      <br><br><br><br><br>
+    </section>
+    <section id="leadership">
+
+      <style>
+        /* leadership-autoplay-css v2 */
+        #leadership .awards-track .award-card {
+          transform: scale(0.90);
+          opacity: .88;
+          transition: transform .35s ease, box-shadow .35s ease, opacity .35s ease;
+          transform-origin: center bottom;
+        }
+
+        #leadership .awards-track .award-card.active {
+
+          transform: scale(1.08);
+          opacity: 1;
+          box-shadow: 0 12px 36px rgba(0, 0, 0, .35);
+          z-index: 2;
+        }
+
+        #leadership h2 {
+          font-size: 2.5rem;
+          margin: 0 0 18px
+        }
+
+        
+      </style>
+      <h2>Leadership &amp; Volunteering</h2>
+      <div class="awards-slider"><button aria-label="Previous" class="slide-btn prev">‹</button>
+        <div class="awards-track">
+          <div class="award-card" data-href="assets/leadership/ieee-branch.pdf">
+            <div class="award-media"><img alt="Branch Treasurer — IEEE BRAC University Student Branch (2023)"
+                src="assets/leadership/img/ieee.jpg" />
+              <div class="award-overlay"><span>View document</span></div>
+            </div>
+            <div class="award-content">
+              <h3>Branch Treasurer — IEEE BRAC University Student Branch</h3>
+              <p>2023</p><a href="assets/leadership/ieee-branch.pdf" rel="noopener" target="_blank">Open</a>
+            </div>
+          </div>
+          <div class="award-card" data-href="assets/leadership/rcpc.pdf">
+            <div class="award-media"><img alt="General Secretary — RCPC (2018–19)"
+                src="assets/leadership/img/rcpc.jpg" />
+              <div class="award-overlay"><span>View document</span></div>
+            </div>
+            <div class="award-content">
+              <h3>General Secretary — Rajuk College Photography Club (RCPC)</h3>
+              <p>2018–19</p><a href="assets/leadership/rcpc.pdf" rel="noopener" target="_blank">Open</a>
+            </div>
+          </div>
+          <div class="award-card" data-href="assets/leadership/prefectship-rajuk.pdf">
+            <div class="award-media"><img alt="Assistant College Captain — Rajuk Uttara Model College (2017–18)"
+                src="assets/leadership/img/rajuk-prefect.jpg" />
+              <div class="award-overlay"><span>View document</span></div>
+            </div>
+            <div class="award-content">
+              <h3>Assistant College Captain — RUMC</h3>
+              <p>2017–18</p><a href="assets/leadership/prefectship-rajuk.pdf" rel="noopener" target="_blank">Open</a>
+            </div>
+          </div>
+          <div class="award-card" data-href="assets/leadership/rmc.pdf">
+            <div class="award-media"><img alt="Volunteer — Quality Journal Publications Award Ceremony (RMC)"
+                src="assets/leadership/img/quality-journal.jpg" />
+              <div class="award-overlay"><span>View document</span></div>
+            </div>
+            <div class="award-content">
+              <h3>Volunteer — Quality Journal Publications Award Ceremony (RMC), BRAC University</h3>
+              <p>Feb 2024</p><a href="assets/leadership/rmc.pdf" rel="noopener" target="_blank">Open</a>
+            </div>
+          </div>
+          <div class="award-card" data-href="assets/leadership/iap-aap.pdf">
+            <div class="award-media"><img alt="Volunteer — 4th AAP &amp; IAP Meeting (Aug 2023)"
+                src="assets/leadership/img/iap-aap.jpg" />
+              <div class="award-overlay"><span>View document</span></div>
+            </div>
+            <div class="award-content">
+              <h3>Volunteer — 4th AAP &amp; IAP Meeting (EEE Dept., BRAC University)</h3>
+              <p>Aug 2023</p><a href="assets/leadership/iap-aap.pdf" rel="noopener" target="_blank">Open</a>
+            </div>
+          </div>
+          <div class="award-card" data-href="assets/leadership/aamar-school.pdf">
+            <div class="award-media"><img alt="Volunteer — Aamar School (2018)"
+                src="assets/leadership/img/aamar-school.jpg" />
+              <div class="award-overlay"><span>View document</span></div>
+            </div>
+            <div class="award-content">
+              <h3>Volunteer — Aamar School</h3>
+              <p>2018</p><a href="assets/leadership/aamar-school.pdf" rel="noopener" target="_blank">Open</a>
+            </div>
+          </div>
+          <div class="award-card" data-href="assets/leadership/volunteer-plant-tree.pdf">
+            <div class="award-media"><img alt="Volunteer — Change Team Foundation (2016)"
+                src="assets/leadership/img/volunteer-change-team.jpg" />
+              <div class="award-overlay"><span>View document</span></div>
+            </div>
+            <div class="award-content">
+              <h3>Volunteer — Change Team Foundation</h3>
+              <p>2016</p><a href="assets/leadership/volunteer-plant-tree.pdf" rel="noopener" target="_blank">Open</a>
+            </div>
+          </div>
+        </div><button aria-label="Next" class="slide-btn next">›</button>
+      </div>
+      <script>
+        (function () {
+          const slider = document.querySelector('#leadership .awards-slider');
+          if (!slider) return;
+          const track = slider.querySelector('.awards-track');
+          const inner = document.createElement('div');
+          inner.className = 'awards-track-inner';
+          while (track.firstChild) inner.appendChild(track.firstChild);
+          track.appendChild(inner);
+          const prev = slider.querySelector('.slide-btn.prev');
+          const next = slider.querySelector('.slide-btn.next');
+          // Convert per-card anchor into whole-card click
+          inner.querySelectorAll('.award-card').forEach(card => {
+            const a = card.querySelector('.award-content a');
+            if (a && a.href) {
+              card.dataset.href = a.href;
+              a.remove();
+              card.style.cursor = 'pointer';
+              card.setAttribute('role', 'link');
+              card.addEventListener('click', () => window.open(card.dataset.href, '_blank', 'noopener'));
+            }
+          });
+          function stepWidth() {
+            const card = inner.querySelector('.award-card');
+            if (!card) return 400;
+            const w = card.getBoundingClientRect().width;
+            const gap = parseFloat(getComputedStyle(inner).gap || 0);
+            return w + gap;
+          }
+          function updateButtons() {
+            const maxScroll = inner.scrollWidth - track.clientWidth;
+            prev.disabled = track.scrollLeft <= 0;
+            next.disabled = track.scrollLeft >= maxScroll - 2;
+          }
+          function go(dir) {
+            track.scrollBy({ left: stepWidth() * dir, behavior: 'smooth' });
+            setTimeout(updateButtons, 200);
+          }
+          prev.addEventListener('click', () => go(-1));
+          next.addEventListener('click', () => go(1));
+          // Hover-based auto-scroll with same fast behavior and wider zones (40/60)
+          let autoDir = 0, rafId = null, lastTime = null;
+          function autoScroll(ts) {
+            if (autoDir === 0) { rafId = null; lastTime = null; return; }
+            if (!lastTime) lastTime = ts;
+            const dt = Math.min(40, ts - lastTime);
+            lastTime = ts;
+            let speed = 0.8; // px/ms base
+            const rect = track.getBoundingClientRect();
+            const mouseX = window._leadHoverX ?? (autoDir > 0 ? rect.right : rect.left);
+            const pct = Math.max(0, Math.min(1, (mouseX - rect.left) / rect.width));
+            const edgeFactor = autoDir < 0 ? (0.4 - pct) : (pct - 0.6);
+            if (edgeFactor > 0) speed += edgeFactor * 4.0;
+            track.scrollLeft += autoDir * speed * dt;
+            updateButtons();
+            rafId = requestAnimationFrame(autoScroll);
+          }
+          function startAuto(dir) {
+            autoDir = dir;
+            if (rafId === null && autoDir !== 0) rafId = requestAnimationFrame(autoScroll);
+          }
+          function stopAuto() { autoDir = 0; }
+          function onMove(e) {
+            const rect = track.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            window._leadHoverX = e.clientX;
+            const pct = x / rect.width;
+            if (pct < 0.40) startAuto(-1);
+            else if (pct > 0.60) startAuto(1);
+            else stopAuto();
+          }
+          track.addEventListener('mouseenter', onMove);
+          track.addEventListener('mousemove', onMove);
+          track.addEventListener('mouseleave', stopAuto);
+          window.addEventListener('blur', stopAuto);
+          window.addEventListener('resize', updateButtons);
+          track.addEventListener('scroll', updateButtons);
+          updateButtons();
+        })();
+      </script>
+      <script>
+        // leadership-autoplay-js v2
+        (function () {
+          const slider = document.querySelector('#leadership .awards-slider');
+          if (!slider) return;
+          const track = slider.querySelector('.awards-track');
+          const inner = track.querySelector('.awards-track-inner') || track;
+          const cards = Array.from(inner.querySelectorAll('.award-card'));
+          if (!cards.length) return;
+          // Tunables
+          const HOLD_MS = 1600;           // how long the active card stays popped
+          const ACTIVATE_DELAY_MS = 300;  // wait after scroll to apply pop (centering first)
+          let idx = 0;
+          let timer = null;
+          function gapPx() {
+            const g = parseFloat(getComputedStyle(inner).gap || 0);
+            return isNaN(g) ? 0 : g;
+          }
+          function cardWidth() {
+            const c = inner.querySelector('.award-card');
+            return c ? c.getBoundingClientRect().width : 400;
+          }
+          function stepWidth() {
+            return cardWidth() + gapPx();
+          }
+          function maxScrollLeft() {
+            return inner.scrollWidth - track.clientWidth;
+          }
+          function centerLeft(i) {
+            const w = stepWidth();
+            const leftEdgeForI = i * w;
+            const centerOffset = (track.clientWidth - cardWidth()) / 2;
+            let left = leftEdgeForI - Math.max(0, centerOffset);
+            if (left < 0) left = 0;
+            const maxL = maxScrollLeft();
+            if (left > maxL) left = maxL;
+            return left;
+          }
+          function clearActive() { cards.forEach(c => c.classList.remove('active')); }
+          function show(i, instant) {
+            idx = (i + cards.length) % cards.length;
+            const left = centerLeft(idx);
+            track.scrollTo({ left, behavior: instant ? 'auto' : 'smooth' });
+            clearActive();
+            setTimeout(() => {
+              cards[idx].classList.add('active'); // pop in (centered)
+              timer = setTimeout(next, HOLD_MS);   // wait longer before switching
+            }, instant ? 0 : ACTIVATE_DELAY_MS);
+          }
+          function next() {
+            clearActive();
+            const nextIndex = (idx + 1) % cards.length;
+            show(nextIndex, false);
+          }
+          function start() {
+            if (timer) return;
+            show(idx, true);
+          }
+          function stop() {
+            if (timer) { clearTimeout(timer); timer = null; }
+            clearActive();
+          }
+          // Pause when user hovers / tab loses focus
+          slider.addEventListener('mouseenter', stop);
+          slider.addEventListener('mouseleave', start);
+          window.addEventListener('blur', stop);
+          window.addEventListener('focus', start);
+          window.addEventListener('resize', () => show(idx, true));
+          start();
+        })();
+      </script>
+      <section class="section" id="contact">
+        <h3></h3>
+        <div class="contact-grid equal">
+          <div class="contact-left">
+            <br><br><br><br><br>
+            <h4 class="contact-title big">Get in touch</h4>
+          </div>
+          <div class="contact-right">
+            <div class="card contact-card">
+              <ul class="contact-list bigger">
+                <li><span class="label">Mail</span> <a
+                    href="mailto:saadmanalvi.2020@gmail.com">saadmanalvi.2020@gmail.com</a></li>
+                <li><span class="label">LinkedIn</span> <a href="https://www.linkedin.com/in/saadman-alvi-518268234/"
+                    rel="noopener" target="_blank">Saadman Alvi</a></li>
+                <li><span class="label">GitHub</span> <a href="https://github.com/Saadman2608" rel="noopener"
+                    target="_blank">Saadman2608</a></li>
+                <li><span class="label">X</span> <a href="https://x.com/alvi_saadman" rel="noopener"
+                    target="_blank">alvi_saadman</a></li>
+                <li><span class="label">ResearchGate</span> <a
+                    href="https://www.researchgate.net/profile/Saadman-Sakib-5?ev=hdr_xprf" rel="noopener"
+                    target="_blank">Saadman Sakib</a></li>
+                <li><span class="label">Facebook</span> <a href="https://www.facebook.com/saadman.alvi/" rel="noopener"
+                    target="_blank">Saadman Alvi</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="y"></span> Saadman Alvi • All Rights Reserved</p>
+    </div>
+  </footer>
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Theme toggle
+    const root = document.documentElement;
+    const toggleBtn = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') { root.setAttribute('data-theme', 'light'); }
+    else { root.setAttribute('data-theme', 'dark'); } // default dark
+    toggleBtn.addEventListener('click', () => {
+      const now = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', now);
+      localStorage.setItem('theme', now);
+    });
+    // Submenu hover
+    const menuWithSub = document.querySelector('.menu-with-sub');
+    if (menuWithSub) {
+      menuWithSub.addEventListener('mouseenter', () => menuWithSub.classList.add('open'));
+      menuWithSub.addEventListener('mouseleave', () => menuWithSub.classList.remove('open'));
+      const link = menuWithSub.querySelector('a');
+      if (link) {
+        link.addEventListener('focus', () => menuWithSub.classList.add('open'));
+        link.addEventListener('blur', () => menuWithSub.classList.remove('open'));
+      }
+    }
+    // Typewriter roles
+    const roles = [
+      "an Engineer",
+      "a Designer",
+      "a Video Editor",
+      "a Content Planner",
+      "Project In Charge"
+    ];
+    const roleEl = document.getElementById('role');
+    const cursorEl = document.querySelector('.cursor');
+    let idx = 0; let char = 0;
+    const typeSpeed = 45; const eraseSpeed = 35; const cycleTime = 2000;
+    function type() {
+      const word = roles[idx];
+      if (char < word.length) { roleEl.textContent = word.substring(0, char + 1); char++; setTimeout(type, typeSpeed); }
+      else { const typingTime = char * typeSpeed; const eraseTime = char * eraseSpeed; const hold = Math.max(120, cycleTime - (typingTime + eraseTime)); setTimeout(() => erase(), hold); }
+    }
+    function erase() {
+      const word = roles[idx];
+      if (char > 0) { roleEl.textContent = word.substring(0, char - 1); char--; setTimeout(erase, eraseSpeed); }
+      else { idx = (idx + 1) % roles.length; setTimeout(type, 150); }
+    }
+    setInterval(() => { cursorEl.classList.toggle('hidden'); }, 600);
+    type();
+    // Populate today's date for Track Record
+    (function () {
+      const el = document.getElementById('today');
+      if (!el) return;
+      const opts = { day: '2-digit', month: 'short', year: 'numeric' };
+      el.textContent = new Date().toLocaleDateString(undefined, opts);
+    })();
+    // Success counter animation
+    (function () {
+      const section = document.getElementById('success');
+      if (!section) return;
+      const counts = section.querySelectorAll('.count');
+      let done = false;
+      function animate() {
+        counts.forEach(el => {
+          const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+          const dur = 1400;
+          const start = performance.now();
+          function tick(now) {
+            const p = Math.min(1, (now - start) / dur);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.floor(eased * target).toString();
+            if (p < 1) requestAnimationFrame(tick); else el.textContent = target.toString();
+          }
+          requestAnimationFrame(tick);
+        });
+      }
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting && !done) { done = true; animate(); io.disconnect(); } });
+        }, { threshold: 0.3 });
+        io.observe(section);
+      } else { animate(); }
+    })();
+    // v35: Repeatable staggered reveal for timeline sections (Experience & Education)
+    (function () {
+      function setupTimeline(selector) {
+        const tl = document.querySelector(selector);
+        if (!tl) return;
+        const items = Array.from(tl.querySelectorAll('.tl-item'));
+        const obs = ('IntersectionObserver' in window)
+          ? new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+              const el = e.target;
+              if (e.isIntersecting) { el.classList.add('revealed'); }
+              else { el.classList.remove('revealed'); }
+            });
+          }, { threshold: 0.2 })
+          : null;
+        items.forEach((el, i) => {
+          el.style.transitionDelay = (i * 140) + 'ms';
+          if (obs) obs.observe(el); else setTimeout(() => el.classList.add('revealed'), i * 140);
+        });
+      }
+      setupTimeline('#experience .timeline');
+      setupTimeline('#education .timeline');
+    })();
+    // v37: About "Who I am" pop reveal
+    (function () {
+      const el = document.querySelector('#about .morph-text');
+      if (!el) return;
+      function toggle(entries) {
+        entries.forEach(e => {
+          if (e.isIntersecting) { el.classList.add('reveal'); el.classList.add('pop-in'); }
+          else { el.classList.remove('reveal'); el.classList.remove('pop-in'); }
+        });
+      }
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(toggle, { threshold: 0.6 });
+        io.observe(el);
+      } else {
+        el.classList.add('reveal', 'pop-in');
+      }
+    })();
+  </script>
+  <script>
+    (function () {
+      const modal = document.getElementById('videoModal');
+      const frame = document.getElementById('videoFrame');
+      function openModal(embedUrl) {
+        frame.src = embedUrl;
+        document.body.classList.add('modal-open');
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+      function closeModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        frame.src = '';
+      }
+      document.addEventListener('click', function (ev) {
+        const a = ev.target.closest('a');
+        if (!a) return;
+        const text = (a.textContent || '').toLowerCase();
+        const isWatch = a.classList.contains('watch-video') || text.includes('watch video') || text.includes('watch presentation');
+        if (!isWatch) return;
+        let embed = a.getAttribute('data-embed');
+        if (!embed) {
+          const href = a.getAttribute('href') || '';
+          try {
+            const url = new URL(href, window.location.href);
+            const host = url.hostname.toLowerCase();
+            if (host.includes('youtu.be')) {
+              const vid = url.pathname.replace(/^\//, '');
+              embed = `https://www.youtube.com/embed/${vid}?autoplay=1`;
+            } else if (host.includes('youtube.com')) {
+              const v = url.searchParams.get('v');
+              if (v) { embed = `https://www.youtube.com/embed/${v}?autoplay=1`; }
+              else if (url.pathname.startsWith('/embed/')) {
+                embed = url.toString().includes('autoplay=1') ? url.toString() : (url.toString() + (url.search ? '&' : '?') + 'autoplay=1');
+              }
+            } else if (host.includes('drive.google.com')) {
+              const m = url.pathname.match(/\/file\/d\/([^/]+)\//);
+              if (m) { embed = `https://drive.google.com/file/d/${m[1]}/preview`; }
+            } else if (host.includes('vimeo.com')) {
+              const m = url.pathname.match(/^\/(\d+)/);
+              if (m) { embed = `https://player.vimeo.com/video/${m[1]}?autoplay=1`; }
+            }
+          } catch (e) { }
+        }
+        if (embed) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          openModal(embed);
+        }
+      }, true);
+      modal?.addEventListener('click', (e) => {
+        if (e.target.matches('[data-close], .video-close')) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+      });
+    })();
+  </script>
+  <div aria-hidden="true" aria-label="Image viewer" class="image-modal" id="imageModal" role="dialog">
+    <div class="image-content" role="document">
+      <button aria-label="Close" class="image-close" data-close="" type="button">×</button>
+      <img alt="Preview" id="lightboxImg" src="" />
+    </div>
+  </div>
+  <script>
+    (function () {
+      const grid = document.querySelector('.cp-grid');
+      const chips = document.querySelectorAll('.cp-filters .chip');
+      if (grid && chips.length) {
+        chips.forEach(ch => ch.addEventListener('click', () => {
+          chips.forEach(c => c.classList.remove('active')); ch.classList.add('active');
+          const f = ch.getAttribute('data-filter');
+          grid.querySelectorAll('.cp-card').forEach(card => {
+            const cat = card.getAttribute('data-cat');
+            card.style.display = (f === 'all' || f === cat) ? '' : 'none';
+          });
+        }));
+      }
+      const imgModal = document.getElementById('imageModal');
+      const imgEl = document.getElementById('lightboxImg');
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest('a.view-image');
+        if (!a) return;
+        e.preventDefault();
+        imgEl.src = a.getAttribute('href');
+        document.body.classList.add('modal-open');
+        imgModal.classList.add('active');
+        imgModal.setAttribute('aria-hidden', 'false');
+      });
+      function closeImageModal() {
+        imgModal.classList.remove('active');
+        imgModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        imgEl.src = '';
+      }
+      imgModal?.addEventListener('click', (e) => {
+        if (e.target.matches('[data-close], .image-close')) closeImageModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && imgModal.classList.contains('active')) closeImageModal();
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      const tabs = document.querySelectorAll('.cw-tabs .chip');
+      const panes = {
+        design: document.getElementById('pane-design'),
+        motion: document.getElementById('pane-motion'),
+        promo: document.getElementById('pane-promo'),
+        editing: document.getElementById('pane-editing')
+      };
+      tabs.forEach(btn => btn.addEventListener('click', () => {
+        tabs.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        btn.classList.add('active'); btn.setAttribute('aria-selected', 'true');
+        const key = btn.dataset.pane;
+        Object.values(panes).forEach(p => p.classList.remove('active'));
+        panes[key]?.classList.add('active');
+        // Scroll to top of pane
+        panes[key]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }));
+    })();
+  </script>
+  <script id="cw-clean-blanks-v86">
+    document.addEventListener('DOMContentLoaded', function () {
+      const pane = document.querySelector('.cw-pane.active');
+      if (!pane) return;
+      const cards = pane.querySelectorAll('.cp-card');
+      cards.forEach(card => {
+        const img = card.querySelector('img');
+        const titleEl = card.querySelector('.cp-title') || card.querySelector('h3,h4,p,span');
+        const title = titleEl ? titleEl.textContent.trim() : '';
+        const removeIfEmpty = () => {
+          const hasImgOk = img && img.naturalWidth > 0 && img.naturalHeight > 0;
+          const hasText = title.length > 0;
+          if (!hasImgOk && !hasText) {
+            card.remove();
+          }
+        };
+        if (img) {
+          if (img.complete) {
+            // Already attempted to load
+            removeIfEmpty();
+          }
+          img.addEventListener('error', removeIfEmpty, { once: true });
+          img.addEventListener('load', removeIfEmpty, { once: true });
+        } else {
+          // No image: if there's no title either, remove
+          if (!title) card.remove();
+        }
+      });
+    });
+  </script>
+  <script id="cw-placeholder-cleaner-v91">
+    document.addEventListener('DOMContentLoaded', function () {
+      const pane = document.querySelector('.cw-pane.active');
+      if (!pane) return;
+      const PHRASES = [
+        // social post trailing placeholders
+        "YouTube Thumbnails", "No thumbnails yet.", "Facebook Banners", "No banners yet",
+        "Product Designs", "No product designs yet.", "Logo Stinger Animation",
+        // motion/promo/editing placeholders
+        "Title Sequence Demo", "Explainer Motion", "Real Estate Promo", "Festive Offer Promo",
+        "Client Promo Edit", "Highlight Reel",
+        // generic placeholders
+        "Details", "Coming soon", "Placeholder", "Sample"
+      ];
+      const isPlaceholderText = (t) => {
+        if (!t) return false;
+        const tl = t.trim().toLowerCase();
+        return (
+          tl === "details" ||
+          tl === "coming soon" ||
+          tl.includes("no thumbnails yet") ||
+          tl.includes("no banners yet") ||
+          tl.includes("no product designs yet") ||
+          tl.includes("placeholder") ||
+          tl.includes("sample")
+        );
+      };
+      const removeNearestBlock = (node) => {
+        let p = node;
+        for (let i = 0; i < 8 && p; i++) {
+          if (p.classList && (p.classList.contains('cp-card') || p.classList.contains('cp-item'))) {
+            p.remove();
+            return true;
+          }
+          if (['LI', 'ARTICLE', 'DIV', 'P', 'SECTION'].includes(p.tagName)) {
+            p.remove();
+            return true;
+          }
+          p = p.parentElement;
+        }
+        // fallback: remove just the text node's parent
+        if (node.parentElement) node.parentElement.remove();
+        return true;
+      };
+      // 1) Remove exact phrases wherever they occur inside the pane
+      const walker = document.createTreeWalker(pane, NodeFilter.SHOW_TEXT, null);
+      const toRemove = [];
+      while (walker.nextNode()) {
+        const txt = walker.currentNode.nodeValue || "";
+        for (const phrase of PHRASES) {
+          if (txt.trim().toLowerCase() === phrase.toLowerCase()) {
+            toRemove.push(walker.currentNode);
+            break;
+          }
+        }
+        if (isPlaceholderText(txt)) {
+          toRemove.push(walker.currentNode);
+        }
+      }
+      toRemove.forEach(n => removeNearestBlock(n));
+      // 2) Remove visually empty cards or cards with no media/text after load
+      const cards = pane.querySelectorAll('.cp-card');
+      cards.forEach(card => {
+        const img = card.querySelector('img');
+        const titleEl = card.querySelector('.cp-title') || card.querySelector('h3,h4,p,span');
+        const title = titleEl ? titleEl.textContent.trim() : '';
+        const removeIfEmpty = () => {
+          const hasImgOk = img && img.naturalWidth > 0 && img.naturalHeight > 0;
+          const hasText = title.length > 0;
+          if (!hasImgOk && !hasText) {
+            card.remove();
+          }
+          // also remove if title equals 'Details' and there is no image
+          if (!hasImgOk && title.toLowerCase() === 'details') {
+            card.remove();
+          }
+        };
+        if (img) {
+          if (img.complete) removeIfEmpty();
+          img.addEventListener('error', removeIfEmpty, { once: true });
+          img.addEventListener('load', removeIfEmpty, { once: true });
+        } else {
+          removeIfEmpty();
+        }
+      });
+    });
+  </script>
+  <script>
+    // --- Tabs ---
+    document.addEventListener('click', (e) => {
+      const tab = e.target.closest('.tab');
+      if (tab) {
+        const group = tab.closest('.section');
+        group.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const target = tab.getAttribute('data-tab');
+        group.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        const panel = group.querySelector('#' + target);
+        if (panel) panel.classList.add('active');
+        e.preventDefault();
+      }
+    });
+
+    // --- Modal Video Player (single reusable) ---
+    (function () {
+      const modal = document.getElementById('video-modal');
+      if (!modal) return;
+      const iframe = document.getElementById('video-frame');
+
+      function toEmbed(url) {
+        try {
+          const u = new URL(url);
+          if (u.hostname.includes('youtube.com') || u.hostname.includes('youtu.be')) {
+            // normalize YouTube URLs
+            let id = '';
+            if (u.hostname.includes('youtu.be')) {
+              id = u.pathname.slice(1);
+            } else if (u.searchParams.get('v')) {
+              id = u.searchParams.get('v');
+            }
+            return `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+          }
+          if (u.hostname.includes('drive.google.com')) {
+            // convert drive "file/d/<id>/view" to /preview for embed
+            const m = u.pathname.match(/\/file\/d\/([^/]+)/);
+            if (m) return `https://drive.google.com/file/d/${m[1]}/preview`;
+          }
+          // Fallback: load URL directly
+          return url;
+        } catch (e) {
+          return url;
+        }
+      }
+
+      function openModal(url) {
+        iframe.src = toEmbed(url);
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+      function closeModal() {
+        iframe.src = '';
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest('a.video-card');
+        if (a && a.dataset.videoUrl) {
+          e.preventDefault();
+          openModal(a.dataset.videoUrl);
+        }
+        if (e.target.closest('[data-close]')) {
+          e.preventDefault();
+          closeModal();
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
+
+    // --- Override modal behavior for images vs video ---
+    (function () {
+      const modal = document.getElementById('video-modal');
+      if (!modal) return;
+      const iframe = document.getElementById('video-frame');
+      const imgView = document.getElementById('image-view');
+
+      function isImage(url) {
+        return /\.(png|jpe?g|webp|gif|svg)$/i.test(url);
+      }
+      function toEmbed(url) {
+        try {
+          const u = new URL(url, window.location.href);
+          if (u.hostname.includes('youtube.com') || u.hostname.includes('youtu.be')) {
+            let id = '';
+            if (u.hostname.includes('youtu.be')) id = u.pathname.slice(1);
+            else if (u.searchParams.get('v')) id = u.searchParams.get('v');
+            return `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+          }
+          if (u.hostname.includes('drive.google.com')) {
+            const m = u.pathname.match(/\/file\/d\/([^/]+)/);
+            if (m) return `https://drive.google.com/file/d/${m[1]}/preview`;
+          }
+        } catch (e) { }
+        return url;
+      }
+      // Replace global handlers if present
+      window.__openModal = function (url) {
+        const embed = toEmbed(url);
+        // Decide viewer
+        if (isImage(embed) || isImage(url)) {
+          // Show image
+          iframe.style.display = 'none';
+          iframe.src = '';
+          imgView.style.display = 'block';
+          imgView.src = url;
+        } else {
+          // Show iframe
+          imgView.style.display = 'none';
+          imgView.src = '';
+          iframe.style.display = 'block';
+          iframe.src = embed;
+        }
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+      };
+      window.__closeModal = function () {
+        iframe.src = '';
+        imgView.src = '';
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      };
+      // Hook existing click listeners
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest('a.video-card');
+        if (a && a.dataset.videoUrl) {
+          e.preventDefault();
+          window.__openModal(a.dataset.videoUrl);
+        }
+        if (e.target.closest('[data-close]')) {
+          e.preventDefault();
+          window.__closeModal();
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') window.__closeModal();
+      });
+    })();
+  </script>
+  <script>
+    // --- Sub-tabs inside Design Works ---
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.subtab');
+      if (!btn) return;
+      const section = btn.closest('#design-works');
+      if (!section) return;
+      section.querySelectorAll('.subtab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const key = btn.getAttribute('data-subtab');
+      section.querySelectorAll('.subtab-panel').forEach(p => p.classList.remove('active'));
+      const panel = section.querySelector('#panel-' + key);
+      if (panel) panel.classList.add('active');
+      e.preventDefault();
+    });
+  </script>
+  <script>
+    // Sub-tabs inside Design Works
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.subtab');
+      if (!btn) return;
+      const container = btn.closest('#design-works');
+      if (!container) return;
+      container.querySelectorAll('.subtab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const key = btn.getAttribute('data-subtab');
+      container.querySelectorAll('.subtab-panel').forEach(p => p.classList.remove('active'));
+      const panel = container.querySelector('#panel-' + key);
+      if (panel) panel.classList.add('active');
+      e.preventDefault();
+    });
+  </script>
+  <script>
+    // --- Unified modal for images & videos with header ---
+    (function () {
+      const modal = document.getElementById('video-modal');
+      if (!modal) return;
+      const iframe = document.getElementById('video-frame');
+      const titleEl = document.getElementById('video-modal-title');
+
+      function toEmbed(url) {
+        try {
+          const u = new URL(url, window.location.href);
+          if (u.hostname.includes('youtube.com') || u.hostname.includes('youtu.be')) {
+            let id = '';
+            if (u.hostname.includes('youtu.be')) id = u.pathname.slice(1);
+            else if (u.searchParams.get('v')) id = u.searchParams.get('v');
+            return `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+          }
+          if (u.hostname.includes('drive.google.com')) {
+            const m = u.pathname.match(/\/file\/d\/([^/]+)/);
+            if (m) return `https://drive.google.com/file/d/${m[1]}/preview`;
+          }
+          // If it looks like an image path/URL, route through image-viewer
+          if (/\.(png|jpe?g|webp|gif|svg)$/i.test(u.pathname)) {
+            const view = new URL('assets/image-viewer.html', window.location.href);
+            view.searchParams.set('img', url);
+            return view.toString();
+          }
+        } catch (e) {
+          // Fallback: if it ends as an image extension, still route viewer
+          if (/\.(png|jpe?g|webp|gif|svg)$/i.test(url)) {
+            const base = window.location.href.replace(/[^/]+$/, '');
+            return base + 'assets/image-viewer.html?img=' + encodeURIComponent(url);
+          }
+        }
+        return url;
+      }
+
+      function openModal(url, title) {
+        const embed = toEmbed(url);
+        iframe.src = embed;
+        if (titleEl) titleEl.textContent = title || '';
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+      function closeModal() {
+        iframe.src = '';
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest('a.video-card');
+        if (a && a.dataset.videoUrl) {
+          e.preventDefault();
+          openModal(a.dataset.videoUrl, a.dataset.title || '');
+        }
+        if (e.target.closest('[data-close]')) {
+          e.preventDefault();
+          closeModal();
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
+</body>
+
+</html>

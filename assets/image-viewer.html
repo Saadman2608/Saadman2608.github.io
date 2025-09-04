@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viewer</title>
+<style>
+  html, body { height:100%; margin:0; background:transparent; }
+  body { display:flex; align-items:center; justify-content:center; }
+  .stage { width:98vw; height:92vh; display:flex; align-items:center; justify-content:center; background:transparent; }
+  img { display:block; width:auto; height:auto; max-width:98vw; max-height:92vh; object-fit:contain; background:transparent; }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <img id="pic" alt="Preview"/>
+  </div>
+<script>
+  (function(){
+    const params = new URLSearchParams(location.search);
+    const src = params.get('img');
+    const el = document.getElementById('pic');
+    if (src) el.src = src;
+  })();
+</script>
+</body>
+</html>
